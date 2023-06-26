@@ -1,9 +1,6 @@
-<div class="nav__item" [class.nav__item--round]="item.round" [class.notified]="item.notification"
-    [title]="item.name ? item.name : ''" (click)="toggle_menu()">
+<div class="nav__item" [title]="item.name" (click)="toggle_menu()">
     <i *ngIf="item.icon" class="fa fa-{{item.icon}}"></i>
-    <p *ngIf="item.name && !item.round">{{item.name}}</p>
-    <p *ngIf="item.notification_count">{{item.notification_count}}</p>
-    <div class="nofitication" *ngIf="item.notification && !item.notification_count"></div>
+    <p *ngIf="item.name">{{item.name}}</p>
     <div *ngIf="item.children && opened" class="menu">
         <button *ngFor="let subitem of item.children" class="button">
             <p>{{subitem.name}}</p>

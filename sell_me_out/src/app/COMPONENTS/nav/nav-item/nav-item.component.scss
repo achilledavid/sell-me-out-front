@@ -4,43 +4,15 @@
   gap: 6px;
   cursor: pointer;
   position: relative;
+  background-color: var(--background-hover);
+  padding: 4px 6px;
+  border-radius: 3px;
 
-  &--round {
-    background-color: rgb(211, 211, 211);
-    border-radius: 100vmax;
-    width: fit-content;
-    padding: 0 8px;
-    min-width: 24px;
-    min-height: 24px;
+  &:hover {
+    filter: brightness(0.9);
   }
 
-  .nofitication {
-    position: absolute;
-    top: -1px;
-    right: -3px;
-    width: fit-content;
-    min-width: 11px;
-    height: 11px;
-    background-color: var(--main);
-    border-radius: 100vmax;
-    border: 2px solid var(--background-hover);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .menu {
-    position: absolute;
-    top: calc(100% + 15px);
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-    border-radius: 5px;
-
-    .button {
-      width: 100%;
-    }
+  i {
+    font-size: 0.85rem;
   }
 }

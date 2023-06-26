@@ -13,9 +13,10 @@ import { DetailsComponent } from './PAGES/products/details/details.component';
 import { ListComponent } from './PAGES/products/list/list.component';
 import { OrdersComponent } from './PAGES/orders/orders.component';
 import { CheckoutComponent } from './PAGES/checkout/checkout.component';
+import { CartMiniComponent } from './COMPONENTS/cart-mini/cart-mini.component';
 
 @NgModule({
-  declarations: [AppComponent, NavItemComponent, NavComponent, HomeComponent, SignInComponent, SignUpComponent, ProductsComponent, DetailsComponent, ListComponent, OrdersComponent, CheckoutComponent],
+  declarations: [AppComponent, NavItemComponent, NavComponent, HomeComponent, SignInComponent, SignUpComponent, ProductsComponent, DetailsComponent, ListComponent, OrdersComponent, CheckoutComponent, CartMiniComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
