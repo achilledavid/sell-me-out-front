@@ -9,6 +9,8 @@
   --background-hover: #ebebeb;
   --main: #0171e2;
   --main-light: rgb(1, 113, 226, 0.15);
+  --red: #e94f37;
+  --red-light: rgb(233, 79, 55, 0.2);
   --main-color: #fff;
 }
 
@@ -24,4 +26,14 @@ body {
   background-color: var(--background);
   color: var(--color);
   position: relative;
+}
+
+.content {
+  &__title {
+    margin-bottom: 15px;
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+  }
 }

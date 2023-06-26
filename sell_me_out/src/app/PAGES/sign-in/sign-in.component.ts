@@ -8,6 +8,8 @@ import { TokenService } from 'src/app/SERVICES/token.service';
   styleUrls: ['./sign-in.component.scss'],
 })
 export class SignInComponent {
+  wrong_informations: boolean = false;
+
   constructor(private token: TokenService, private router: Router) {
     if (this.token.isLoggedIn()) this.router.navigate(['/home']);
   }
@@ -15,5 +17,9 @@ export class SignInComponent {
   connect() {
     this.token.setToken('token');
     this.router.navigate(['/home']);
+  }
+
+  signup() {
+    this.router.navigate(['/sign-up']);
   }
 }

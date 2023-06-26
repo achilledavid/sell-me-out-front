@@ -5,6 +5,15 @@
   cursor: pointer;
   position: relative;
 
+  &--round {
+    background-color: rgb(211, 211, 211);
+    border-radius: 100vmax;
+    width: fit-content;
+    padding: 0 8px;
+    min-width: 24px;
+    min-height: 24px;
+  }
+
   .nofitication {
     position: absolute;
     top: -1px;
@@ -18,5 +27,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .menu {
+    position: absolute;
+    top: calc(100% + 15px);
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    border-radius: 5px;
+
+    .button {
+      width: 100%;
+    }
   }
 }

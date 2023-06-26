@@ -30,13 +30,33 @@ export class NavComponent {
       route: '/cart',
       round: true,
       notification: true,
-      notification_count: '12',
+      notification_count: '3',
     },
     {
       icon: 'user',
       route: '/user',
       round: true,
       notification: true,
+      children: [
+        {
+          name: 'profile',
+          route: '/profile',
+          round: false,
+          notification: false,
+        },
+        {
+          name: 'settings',
+          route: '/settings',
+          round: false,
+          notification: false,
+        },
+        {
+          name: 'logout',
+          route: '/logout',
+          round: false,
+          notification: false,
+        },
+      ],
     },
   ];
 }

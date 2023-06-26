@@ -1,6 +1,6 @@
 <div class="content">
     <div class="content__title">
-        <h3>sign in to sell me out</h3>
+        <h3>sign up to sell me out</h3>
     </div>
     <div class="form">
         <label class="form__item" [class.form__item--invalid]="wrong_informations" for="">
@@ -13,11 +13,11 @@
             <p class="error">an error as occured, please try again</p>
         </label>
         <div class="form__buttons">
-            <span class="button" title="sign up to sell me out" (click)="signup()">
-                <p>sign up</p>
+            <span class="button" title="back to sign in" (click)="back()">
+                <p>back</p>
             </span>
-            <button class="button button--main" title="sign in to sell me out" (click)="connect()">
-                <p>sign in</p>
+            <button class="button button--main" title="sign up to sell me out">
+                <p>sign up</p>
             </button>
         </div>
     </div>

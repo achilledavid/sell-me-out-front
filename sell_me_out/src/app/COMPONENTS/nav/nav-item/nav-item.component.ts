@@ -8,4 +8,10 @@ import { nav_items } from 'src/app/CLASSES/nav_items';
 })
 export class NavItemComponent {
   @Input() item: nav_items = {} as nav_items;
+
+  protected opened: boolean = false;
+
+  protected toggle_menu(): void {
+    this.opened = !this.opened;
+  }
 }

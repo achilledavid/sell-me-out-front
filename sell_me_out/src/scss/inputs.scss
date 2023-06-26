@@ -1,13 +1,14 @@
 input {
   border: 1px solid rgb(137, 137, 137);
   border-radius: 5px;
-  font-size: 0.85rem;
-  padding: 4px 8px;
+  font-size: 0.75rem;
+  padding: 0 8px;
   width: 100%;
   font-weight: 400;
   outline: none;
   box-shadow: 0px 0px 0px 0px var(--main-light);
   transition: box-shadow 150ms ease;
+  min-height: 25px;
 
   &:focus {
     border-color: var(--main);

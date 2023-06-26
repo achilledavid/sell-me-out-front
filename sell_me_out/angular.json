@@ -31,6 +31,7 @@
             ],
             "styles": [
               "src/assets/@fortawesome/fontawesome-free/css/all.min.css",
+              "src/scss/form.scss",
               "src/scss/inputs.scss",
               "src/scss/buttons.scss",
               "src/scss/styles.scss",
