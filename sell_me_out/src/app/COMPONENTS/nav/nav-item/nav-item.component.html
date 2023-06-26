@@ -1,0 +1,7 @@
+<div [class]="item.round ? 'nav__item button button--round' : 'nav__item'" [class.notified]="item.notification"
+    [id]="item.notification_count ? item.notification_count : ' '">
+    <i *ngIf="item.icon" class="fa fa-{{item.icon}}"></i>
+    <p *ngIf="item.name && !item.round">{{item.name}}</p>
+    <p *ngIf="item.notification_count">{{item.notification_count}}</p>
+    <div class="nofitication" *ngIf="item.notification && !item.notification_count"></div>
+</div>

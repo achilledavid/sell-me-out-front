@@ -1,0 +1,4 @@
+<navigation *ngIf="isLoggedIn()"></navigation>
+<div class="container" [class.container--full]="!isLoggedIn()">
+    <router-outlet></router-outlet>
+</div>

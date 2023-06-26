@@ -1,0 +1,50 @@
+.button {
+  background-color: #d3d3d3;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 4px 8px;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  outline: none;
+
+  &:hover {
+    filter: brightness(0.9);
+  }
+
+  p {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color);
+  }
+
+  i {
+    font-size: 0.8rem;
+    color: var(--color);
+  }
+
+  &:not(:has(p)) {
+    padding: 4px;
+    width: 24px;
+    height: 24px;
+    justify-content: center;
+
+    i {
+      font-size: 0.75rem;
+    }
+  }
+
+  &--main {
+    background-color: var(--main);
+
+    p {
+      color: var(--main-color);
+    }
+  }
+
+  &--round {
+    border-radius: 100vmax;
+  }
+}

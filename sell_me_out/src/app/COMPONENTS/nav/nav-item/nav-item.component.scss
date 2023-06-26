@@ -1,0 +1,22 @@
+.nav__item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  position: relative;
+
+  .nofitication {
+    position: absolute;
+    top: -1px;
+    right: -3px;
+    width: fit-content;
+    min-width: 11px;
+    height: 11px;
+    background-color: var(--main);
+    border-radius: 100vmax;
+    border: 2px solid var(--background-hover);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
