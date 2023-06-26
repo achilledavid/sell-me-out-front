@@ -1,4 +1,4 @@
-<div class="nav__item" [title]="item.name" (click)="toggle_menu()">
+<div class="nav__item" title="go to {{item.name}}" (click)="onclick()">
     <i *ngIf="item.icon" class="fa fa-{{item.icon}}"></i>
     <p *ngIf="item.name">{{item.name}}</p>
     <div *ngIf="item.children && opened" class="menu">

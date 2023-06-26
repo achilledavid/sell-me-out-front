@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { nav_items } from 'src/app/CLASSES/nav_items';
 
 @Component({
@@ -11,7 +12,14 @@ export class NavItemComponent {
 
   protected opened: boolean = false;
 
-  protected toggle_menu(): void {
-    this.opened = !this.opened;
+  constructor(private router: Router) {}
+
+  protected onclick(): void {
+    if (this.item.children) this.opened = !this.opened;
+    else this.goto();
+  }
+
+  protected goto(): void {
+    if (this.item.route) this.router.navigate([this.item.route]);
   }
 }

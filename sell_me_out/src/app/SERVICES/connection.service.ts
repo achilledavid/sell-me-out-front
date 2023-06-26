@@ -12,4 +12,9 @@ export class ConnectionService {
     if (!this.token.isLoggedIn()) this.router.navigate(['/sign-in']);
     return this.token.isLoggedIn();
   }
+
+  logout() {
+    this.token.deleteToken();
+    this.router.navigate(['/sign-in']);
+  }
 }
