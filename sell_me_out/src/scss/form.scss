@@ -8,12 +8,33 @@
     flex-direction: column;
     gap: 8px;
 
-    p {
+    p,
+    label {
       font-size: 0.85rem;
 
       &.error {
         display: none;
         font-size: 0.65rem;
+      }
+    }
+
+    &--password {
+      .input {
+        position: relative;
+
+        i.eye {
+          position: absolute;
+          right: 0;
+          top: 1px;
+          cursor: pointer;
+          font-size: 0.75rem;
+          color: var(--color);
+          height: 100%;
+          min-width: 30px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
       }
     }
 
@@ -31,6 +52,14 @@
         color: var(--red);
         &.error {
           display: block;
+        }
+      }
+
+      &.form__item--password {
+        .input {
+          i.eye {
+            color: var(--red);
+          }
         }
       }
     }

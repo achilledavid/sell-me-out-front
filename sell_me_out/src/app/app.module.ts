@@ -14,10 +14,24 @@ import { ListComponent } from './PAGES/products/list/list.component';
 import { OrdersComponent } from './PAGES/orders/orders.component';
 import { CheckoutComponent } from './PAGES/checkout/checkout.component';
 import { CartMiniComponent } from './COMPONENTS/cart-mini/cart-mini.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, NavItemComponent, NavComponent, HomeComponent, SignInComponent, SignUpComponent, ProductsComponent, DetailsComponent, ListComponent, OrdersComponent, CheckoutComponent, CartMiniComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  declarations: [
+    AppComponent,
+    NavItemComponent,
+    NavComponent,
+    HomeComponent,
+    SignInComponent,
+    SignUpComponent,
+    ProductsComponent,
+    DetailsComponent,
+    ListComponent,
+    OrdersComponent,
+    CheckoutComponent,
+    CartMiniComponent,
+  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

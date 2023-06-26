@@ -2,23 +2,28 @@
     <div class="content__title">
         <h3>sign in to sell me out</h3>
     </div>
-    <div class="form">
-        <label class="form__item" [class.form__item--invalid]="wrong_informations" for="">
-            <p>username</p>
-            <input type="text">
-        </label>
-        <label class="form__item" [class.form__item--invalid]="wrong_informations" for="">
-            <p>password</p>
-            <input type="password">
+    <form #form="ngForm" class="form">
+        <div class="form__item" [class.form__item--invalid]="wrong_informations">
+            <label for="username">username</label>
+            <input type="text" ngModel autocomplete="off" name="username" required id="username">
+        </div>
+        <div class="form__item form__item--password" [class.form__item--invalid]="wrong_informations">
+            <label for="password">password</label>
+            <div class="input">
+                <input [type]="password_visibility" ngModel autocomplete="off" name="password" required id="password">
+                <i class="fa eye" [class.fa-eye]="password_visibility == 'text'" (click)="toggle_password_visibility()"
+                    [class.fa-eye-slash]="password_visibility  == 'password'"></i>
+            </div>
             <p class="error">an error as occured, please try again</p>
-        </label>
+        </div>
         <div class="form__buttons">
             <span class="button" title="sign up to sell me out" (click)="signup()">
-                <p>sign up</p>
+                <p>no account ?</p>
             </span>
-            <button class="button button--main" title="sign in to sell me out" (click)="connect()">
+            <button class="button button--main" title="sign in to sell me out" [disabled]="form.invalid"
+                (click)="connect(form)">
                 <p>sign in</p>
             </button>
         </div>
-    </div>
+    </form>
 </div>

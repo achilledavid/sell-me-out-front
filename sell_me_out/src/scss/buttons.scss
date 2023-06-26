@@ -47,4 +47,9 @@
   &--round {
     border-radius: 100vmax;
   }
+
+  &:disabled {
+    cursor: not-allowed;
+    filter: opacity(0.8);
+  }
 }

@@ -7,8 +7,14 @@ import { Component } from '@angular/core';
 })
 export class SignUpComponent {
   wrong_informations: boolean = false;
+  password_visibility: string = 'password';
 
   back() {
     window.history.back();
+  }
+
+  toggle_password_visibility() {
+    this.password_visibility =
+      this.password_visibility == 'password' ? 'text' : 'password';
   }
 }
