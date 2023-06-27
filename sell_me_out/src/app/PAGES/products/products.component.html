@@ -1,6 +1,17 @@
 <div class="content">
     <div class="content__title">
-        <h3>products</h3>
+        <div class="buttons">
+            <h3>products</h3>
+            <div class="button button--main" title="create a new product">
+                <p>new product</p>
+            </div>
+        </div>
+        <div class="search buttons">
+            <input type="text" placeholder="type here...">
+            <button class="button">
+                <i class="fa fa-magnifying-glass"></i>
+            </button>
+        </div>
     </div>
     <div class="products">
         <product-mini *ngFor="let product of products" [product]="product"></product-mini>

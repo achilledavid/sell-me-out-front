@@ -1,0 +1,32 @@
+.shop {
+  display: flex;
+  align-items: center;
+  background-color: var(--main);
+  padding: 3px 8px;
+  min-width: 24px;
+  min-height: 22px;
+  border-radius: 100vmax;
+  font-size: 0.85rem;
+  gap: 5px;
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    filter: brightness(0.95);
+  }
+
+  i {
+    font-size: 0.65rem;
+  }
+
+  i,
+  p {
+    line-height: 0;
+    color: var(--main-color);
+  }
+
+  p {
+    min-width: 12px;
+    text-align: end;
+  }
+}

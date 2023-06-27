@@ -5,3 +5,26 @@
   grid-column-gap: 25px;
   grid-row-gap: 25px;
 }
+
+.content {
+  &__title {
+    display: flex;
+    justify-content: space-between;
+
+    .button,
+    input {
+      height: fit-content;
+    }
+
+    input {
+      max-width: 250px;
+    }
+
+    .search {
+      .button {
+        min-width: 25px;
+        min-height: 25px;
+      }
+    }
+  }
+}

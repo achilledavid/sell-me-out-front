@@ -1,0 +1,13 @@
+<div class="content">
+    <div class="content__title">
+        <h3>my shop</h3>
+    </div>
+    <div class="buttons">
+        <span class="button" [class.button--main]="on_product" (click)="go_to_product()">
+            <p>my products</p>
+        </span>
+        <span class="button" [class.button--main]="!on_product" (click)="go_to_orders()">
+            <p>my orders</p>
+        </span>
+    </div>
+</div>

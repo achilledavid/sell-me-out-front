@@ -1,6 +1,17 @@
 <div class="cart" [class.opened]="cart_visibility">
     <div class="cart__head">
-        <h2>Cart</h2>
+        <h2>cart</h2>
         <i class="fas fa-times" (click)="toggle_cart()"></i>
+    </div>
+    <div class="cart__content">
+        <p *ngIf="items.length <= 0">your cart is empty</p>
+        <product-cart *ngFor="let product of items; let index= index" [product]="product"
+            [index]="index"></product-cart>
+    </div>
+    <div class="cart__footer">
+        <h3>${{total_price}}</h3>
+        <button class="button button--main" (click)="checkout()" title="proceed to the checkout">
+            <p>checkout</p>
+        </button>
     </div>
 </div>

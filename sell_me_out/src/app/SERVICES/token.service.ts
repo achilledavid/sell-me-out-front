@@ -33,4 +33,17 @@ export class TokenService {
   public isLoggedIn(): boolean {
     return localStorage.getItem('authToken') !== null;
   }
+
+  getRole(): string {
+    const user = localStorage.getItem('authToken');
+    if (user) {
+      const decoded = JSON.parse(user);
+      return decoded.role;
+    }
+    return '';
+  }
+
+  checkIfSeller(): boolean {
+    return this.getRole() != 'seller';
+  }
 }

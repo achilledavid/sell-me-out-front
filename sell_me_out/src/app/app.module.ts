@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavItemComponent } from './COMPONENTS/nav/nav-item/nav-item.component';
 import { NavComponent } from './COMPONENTS/nav/nav.component';
-import { HomeComponent } from './PAGES/home/home.component';
 import { SignInComponent } from './PAGES/sign-in/sign-in.component';
 import { SignUpComponent } from './PAGES/sign-up/sign-up.component';
 import { ProductsComponent } from './PAGES/products/products.component';
@@ -17,13 +16,16 @@ import { CartComponent } from './COMPONENTS/cart/cart.component';
 import { ProductMiniComponent } from './COMPONENTS/product-mini/product-mini.component';
 import { DetailsComponent } from './PAGES/details/details.component';
 import { RatingStarsComponent } from './COMPONENTS/rating-stars/rating-stars.component';
+import { ProductCartComponent } from './COMPONENTS/product-cart/product-cart.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ShopMiniComponent } from './COMPONENTS/shop-mini/shop-mini.component';
+import { ShopComponent } from './PAGES/shop/shop.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavItemComponent,
     NavComponent,
-    HomeComponent,
     SignInComponent,
     SignUpComponent,
     ProductsComponent,
@@ -34,8 +36,11 @@ import { RatingStarsComponent } from './COMPONENTS/rating-stars/rating-stars.com
     ProductMiniComponent,
     DetailsComponent,
     RatingStarsComponent,
+    ProductCartComponent,
+    ShopMiniComponent,
+    ShopComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

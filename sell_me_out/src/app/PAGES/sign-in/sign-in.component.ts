@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { TokenService } from 'src/app/SERVICES/token.service';
+import { ConnectionService } from 'src/app/SERVICES/connection.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -12,13 +13,19 @@ export class SignInComponent {
   wrong_informations: boolean = false;
   password_visibility: string = 'password';
 
-  constructor(private token: TokenService, private router: Router) {
-    if (this.token.isLoggedIn()) this.router.navigate(['/home']);
+  constructor(
+    private token: TokenService,
+    private router: Router,
+    private connection: ConnectionService
+  ) {
+    if (this.token.isLoggedIn()) this.router.navigate(['/products']);
   }
 
   connect(form: NgForm) {
-    this.token.setToken('token');
-    this.router.navigate(['/home']);
+    let data = new FormData();
+    data.append('mail', form.value.mail);
+    data.append('password', form.value.password);
+    this.connection.login(data);
   }
 
   signup() {

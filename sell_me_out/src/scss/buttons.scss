@@ -27,22 +27,21 @@
     color: var(--color);
   }
 
-  &:not(:has(p)) {
-    padding: 4px;
-    width: 24px;
-    height: 24px;
-
-    i {
-      font-size: 0.75rem;
-    }
-  }
-
   &--main {
     background-color: var(--main);
 
     p,
     i {
       color: var(--main-color);
+    }
+  }
+
+  &--red {
+    background-color: var(--red-light);
+
+    p,
+    i {
+      color: var(--red);
     }
   }
 

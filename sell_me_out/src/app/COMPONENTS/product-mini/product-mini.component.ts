@@ -13,8 +13,8 @@ export class ProductMiniComponent {
 
   constructor(private cart: CartService, private router: Router) {}
 
-  add_to_cart(id: number) {
-    this.cart.add_to_cart(id);
+  add_to_cart(product: product_mini) {
+    this.cart.add_to_cart(product);
   }
 
   go_to_details(id: number) {

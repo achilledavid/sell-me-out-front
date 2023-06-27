@@ -2,6 +2,7 @@
     <h2>sell me out</h2>
     <menu>
         <navigation-item *ngFor="let item of items" [item]="item"></navigation-item>
-        <cart-mini class="cart"></cart-mini>
+        <shop-mini class="mini" *ngIf="seller"></shop-mini>
+        <cart-mini class="mini"></cart-mini>
     </menu>
 </nav>

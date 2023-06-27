@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './PAGES/home/home.component';
 import { ConnectionService } from './SERVICES/connection.service';
 import { SignInComponent } from './PAGES/sign-in/sign-in.component';
 import { SignUpComponent } from './PAGES/sign-up/sign-up.component';
 import { ProductsComponent } from './PAGES/products/products.component';
 import { OrdersComponent } from './PAGES/orders/orders.component';
 import { DetailsComponent } from './PAGES/details/details.component';
+import { ShopComponent } from './PAGES/shop/shop.component';
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'home',
+    redirectTo: 'products',
   },
   {
     path: 'sign-in',
@@ -21,11 +21,6 @@ const routes: Routes = [
   {
     path: 'sign-up',
     component: SignUpComponent,
-  },
-  {
-    path: 'home',
-    component: HomeComponent,
-    canActivate: [ConnectionService],
   },
   {
     path: 'products',
@@ -40,6 +35,11 @@ const routes: Routes = [
   {
     path: 'orders',
     component: OrdersComponent,
+    canActivate: [ConnectionService],
+  },
+  {
+    path: 'shop',
+    component: ShopComponent,
     canActivate: [ConnectionService],
   },
   {

@@ -19,7 +19,7 @@ export class DetailsComponent {
   }
 
   add_to_cart() {
-    this.cart.add_to_cart(this.product_id);
+    // this.cart.add_to_cart(this.product_id);
   }
 
   back() {

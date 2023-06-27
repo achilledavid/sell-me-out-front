@@ -1,0 +1,12 @@
+<div class="product">
+    <img [src]="product.image" alt="picture of {{product.name}}">
+    <div class="product__content">
+        <div class="product__content__text">
+            <h3>{{product.name ? product.name : 'product name'}}</h3>
+            <p>${{product.price ? product.price : 'price'}}</p>
+        </div>
+        <button class="button button--red" title="remove from your cart" (click)="remove_from_cart()">
+            <i class="fa fa-trash"></i>
+        </button>
+    </div>
+</div>
