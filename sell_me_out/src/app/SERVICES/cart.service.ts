@@ -6,7 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class CartService {
-  number_of_items: number = 0;
+  items: number[] = [];
+  number_of_items: number = this.items.length;
   number_of_items_subject: Subject<number> = new Subject<number>();
   cart_visibility: boolean = false;
   cart_visibility_subject: Subject<boolean> = new Subject<boolean>();
@@ -17,9 +18,11 @@ export class CartService {
     return this.number_of_items_subject.asObservable();
   }
 
-  add_to_cart(): void {
-    this.number_of_items++;
+  add_to_cart(id: number): void {
+    this.items.push(id);
+    this.number_of_items = this.items.length;
     this.number_of_items_subject.next(this.number_of_items);
+    console.log(this.items);
   }
 
   get_cart_visibility(): Observable<boolean> {

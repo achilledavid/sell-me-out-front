@@ -1,0 +1,17 @@
+<div class="product">
+    <div class="product__image">
+        <img [src]="product.image" alt="picture of {{product.name ? product.name : 'product name'}}">
+        <span class="button product__details" (click)="go_to_details(product.id)">
+            <p>see details</p>
+        </span>
+    </div>
+    <div class="product__content">
+        <h3>{{product.name ? product.name : 'product name'}}</h3>
+        <div class="product__content__price">
+            <span>${{product.price ? product.price : 'price'}}</span>
+            <button class="button button--main" (click)="add_to_cart(product.id)">
+                <p>add to cart</p>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CartService } from 'src/app/SERVICES/cart.service';
+import { product_mini } from 'src/app/CLASSES/product_mini';
 
 @Component({
   selector: 'app-products',
@@ -7,9 +7,24 @@ import { CartService } from 'src/app/SERVICES/cart.service';
   styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent {
-  constructor(private cart: CartService) {}
-
-  add_to_cart(): void {
-    this.cart.add_to_cart();
-  }
+  products: product_mini[] = [
+    {
+      id: 1,
+      name: 'New Balance 9060',
+      price: 150,
+      image: '/assets/img/shoe-1.png',
+    },
+    {
+      id: 2,
+      name: 'New Balance 574',
+      price: 110,
+      image: '/assets/img/shoe-2.png',
+    },
+    {
+      id: 3,
+      name: 'New Balance 530',
+      price: 110,
+      image: '/assets/img/shoe-3.png',
+    },
+  ];
 }

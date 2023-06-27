@@ -6,6 +6,7 @@ import { SignInComponent } from './PAGES/sign-in/sign-in.component';
 import { SignUpComponent } from './PAGES/sign-up/sign-up.component';
 import { ProductsComponent } from './PAGES/products/products.component';
 import { OrdersComponent } from './PAGES/orders/orders.component';
+import { DetailsComponent } from './PAGES/details/details.component';
 
 const routes: Routes = [
   {
@@ -29,6 +30,11 @@ const routes: Routes = [
   {
     path: 'products',
     component: ProductsComponent,
+    canActivate: [ConnectionService],
+  },
+  {
+    path: 'products/details/:product_id',
+    component: DetailsComponent,
     canActivate: [ConnectionService],
   },
   {

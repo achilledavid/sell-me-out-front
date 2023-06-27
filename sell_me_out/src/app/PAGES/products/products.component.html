@@ -2,7 +2,7 @@
     <div class="content__title">
         <h3>products</h3>
     </div>
-    <button class="button button--main" (click)="add_to_cart()">
-        <p>add to cart</p>
-    </button>
+    <div class="products">
+        <product-mini *ngFor="let product of products" [product]="product"></product-mini>
+    </div>
 </div>
