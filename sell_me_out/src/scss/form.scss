@@ -39,6 +39,11 @@
     }
 
     &--invalid {
+      p,
+      label {
+        color: var(--red);
+      }
+
       input {
         border: 1px solid var(--red);
 

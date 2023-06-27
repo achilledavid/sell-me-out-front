@@ -7,6 +7,7 @@
   background-color: var(--background-hover);
   padding: 4px 6px;
   border-radius: 3px;
+  user-select: none;
 
   &:hover {
     filter: brightness(0.95);

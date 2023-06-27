@@ -1,4 +1,5 @@
 <navigation *ngIf="isLoggedIn()"></navigation>
+<cart *ngIf="isLoggedIn()"></cart>
 <div class="container" [class.container--full]="!isLoggedIn()">
     <router-outlet></router-outlet>
 </div>

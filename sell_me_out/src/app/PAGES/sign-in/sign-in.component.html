@@ -4,8 +4,8 @@
     </div>
     <form #form="ngForm" class="form">
         <div class="form__item" [class.form__item--invalid]="wrong_informations">
-            <label for="username">username</label>
-            <input type="text" ngModel autocomplete="off" name="username" required id="username">
+            <label for="mail">e-mail</label>
+            <input type="email" ngModel autocomplete="off" name="mail" required id="mail">
         </div>
         <div class="form__item form__item--password" [class.form__item--invalid]="wrong_informations">
             <label for="password">password</label>

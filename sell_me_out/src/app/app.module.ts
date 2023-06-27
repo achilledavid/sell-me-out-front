@@ -15,6 +15,7 @@ import { OrdersComponent } from './PAGES/orders/orders.component';
 import { CheckoutComponent } from './PAGES/checkout/checkout.component';
 import { CartMiniComponent } from './COMPONENTS/cart-mini/cart-mini.component';
 import { FormsModule } from '@angular/forms';
+import { CartComponent } from './COMPONENTS/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { FormsModule } from '@angular/forms';
     OrdersComponent,
     CheckoutComponent,
     CartMiniComponent,
+    CartComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

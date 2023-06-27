@@ -9,6 +9,7 @@
   font-size: 0.85rem;
   gap: 5px;
   cursor: pointer;
+  user-select: none;
 
   &:hover {
     filter: brightness(0.95);
@@ -22,5 +23,10 @@
   p {
     line-height: 0;
     color: var(--main-color);
+  }
+
+  p {
+    min-width: 12px;
+    text-align: end;
   }
 }

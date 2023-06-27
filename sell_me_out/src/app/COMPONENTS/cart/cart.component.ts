@@ -3,19 +3,19 @@ import { Subscription } from 'rxjs';
 import { CartService } from 'src/app/SERVICES/cart.service';
 
 @Component({
-  selector: 'cart-mini',
-  templateUrl: './cart-mini.component.html',
-  styleUrls: ['./cart-mini.component.scss'],
+  selector: 'cart',
+  templateUrl: './cart.component.html',
+  styleUrls: ['./cart.component.scss'],
 })
-export class CartMiniComponent {
-  number_of_items: number = 0;
+export class CartComponent {
+  cart_visibility: boolean = false;
   subscription: Subscription;
 
   constructor(private cart: CartService) {
     this.subscription = cart
-      .get_number_of_items()
-      .subscribe((value: number) => {
-        this.number_of_items = value;
+      .get_cart_visibility()
+      .subscribe((value: boolean) => {
+        this.cart_visibility = value;
       });
   }
 
