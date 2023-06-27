@@ -1,0 +1,19 @@
+.stars {
+  display: flex;
+  gap: 2px;
+
+  .fa {
+    color: #ffb703;
+  }
+
+  .fa-regular {
+    color: var(--color);
+  }
+
+  .editable {
+    cursor: pointer;
+    &:hover {
+      filter: brightness(0.9);
+    }
+  }
+}

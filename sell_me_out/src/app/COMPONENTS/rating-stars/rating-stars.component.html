@@ -1,0 +1,5 @@
+<div class="stars">
+    <i *ngFor="let star of stars; let i = index" [class.fa]="star" [class.fa-regular]="!star" class="fa-star"
+        [class.editable]="editable" (click)="rate(i + 1)">
+    </i>
+</div>

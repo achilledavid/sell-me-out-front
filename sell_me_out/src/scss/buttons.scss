@@ -40,7 +40,8 @@
   &--main {
     background-color: var(--main);
 
-    p {
+    p,
+    i {
       color: var(--main-color);
     }
   }
@@ -53,4 +54,10 @@
     cursor: not-allowed;
     filter: opacity(0.8);
   }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }

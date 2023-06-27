@@ -1,5 +1,25 @@
-<div class="content">
-    <div class="content__title">
-        <h3>product number {{product_id}}</h3>
+<div class="details">
+    <div class="details__image">
+        <img src="/assets/img/shoe-1.png" alt="picture of New Balance 9060">
+    </div>
+    <div class="details__content content">
+        <div class="content__title">
+            <h3>New Balande 9060</h3>
+            <p>the New Balance 9060 Sea Salt features a gray premium mesh base. The entire structure is enhanced by
+                brushed beige suede inserts in the style of a 990. Its distinguishing feature is an imposing, chunky
+                ABZORB sole. White laces complete the avant-garde look.</p>
+        </div>
+        <p class="details__content__price">$150</p>
+        <div class="buttons">
+            <button class="button" (click)="back()">
+                <i class="fa fa-arrow-left"></i>
+                <p>back</p>
+            </button>
+            <button class="button button--main" (click)="add_to_cart()">
+                <i class="fa fa-add"></i>
+                <p>add to cart</p>
+            </button>
+        </div>
+        <rating-stars [rating]="4" [editable]="false"></rating-stars>
     </div>
 </div>

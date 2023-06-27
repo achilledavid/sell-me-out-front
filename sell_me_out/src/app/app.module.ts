@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { CartComponent } from './COMPONENTS/cart/cart.component';
 import { ProductMiniComponent } from './COMPONENTS/product-mini/product-mini.component';
 import { DetailsComponent } from './PAGES/details/details.component';
+import { RatingStarsComponent } from './COMPONENTS/rating-stars/rating-stars.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { DetailsComponent } from './PAGES/details/details.component';
     CartComponent,
     ProductMiniComponent,
     DetailsComponent,
+    RatingStarsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

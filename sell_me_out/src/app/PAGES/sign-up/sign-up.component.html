@@ -20,6 +20,13 @@
             </div>
             <p class="error">an error as occured, please try again</p>
         </div>
+        <div class="form__item" [class.form__item--invalid]="wrong_informations">
+            <label for="role">role</label>
+            <select name="role" id="role">
+                <option value="seller">seller</option>
+                <option value="customer">customer</option>
+            </select>
+        </div>
         <div class="form__buttons">
             <span class="button" title="back to sign in" (click)="back()">
                 <p>back</p>
