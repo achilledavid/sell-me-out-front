@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { product_mini } from 'src/app/CLASSES/product_mini';
 import { CartService } from 'src/app/SERVICES/cart.service';
@@ -16,8 +17,8 @@ export class CartComponent {
   items: product_mini[] = [];
   items_subscription: Subscription;
 
-  constructor(private cart: CartService) {
-    this.check_saved_cart();
+  constructor(private cart: CartService, private router: Router) {
+    this.check_total_price();
 
     this.cart_visibility_subscription = cart
       .get_cart_visibility()
@@ -38,12 +39,6 @@ export class CartComponent {
       });
   }
 
-  check_saved_cart(): void {
-    const saved_cart = localStorage.getItem('cart');
-    if (saved_cart) this.items = JSON.parse(saved_cart);
-    this.check_total_price();
-  }
-
   check_total_price(): void {
     this.total_price = 0;
     this.items.forEach((item) => {
@@ -56,7 +51,7 @@ export class CartComponent {
   }
 
   checkout() {
-    console.log('checkout');
+    this.router.navigate(['/checkout']);
   }
 
   ngOnDestroy() {

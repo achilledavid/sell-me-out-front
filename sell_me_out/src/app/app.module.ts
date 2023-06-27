@@ -20,6 +20,7 @@ import { ProductCartComponent } from './COMPONENTS/product-cart/product-cart.com
 import { HttpClientModule } from '@angular/common/http';
 import { ShopMiniComponent } from './COMPONENTS/shop-mini/shop-mini.component';
 import { ShopComponent } from './PAGES/shop/shop.component';
+import { ProductsListCardComponent } from './COMPONENTS/products-list-card/products-list-card.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { ShopComponent } from './PAGES/shop/shop.component';
     ProductCartComponent,
     ShopMiniComponent,
     ShopComponent,
+    ProductsListCardComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
