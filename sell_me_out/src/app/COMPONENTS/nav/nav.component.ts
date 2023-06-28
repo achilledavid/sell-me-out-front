@@ -15,7 +15,7 @@ export class NavComponent {
       route: '/products',
     },
     {
-      name: 'orders',
+      name: 'my orders',
       route: '/orders',
     },
   ];

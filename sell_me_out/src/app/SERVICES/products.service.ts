@@ -19,4 +19,8 @@ export class ProductsService {
   get_product(id: number): Observable<any> {
     return this.back.get(`product/${id}`);
   }
+
+  togge_visibility(id: number): Observable<any> {
+    return this.back.post_without_data(`product/visibility/${id}`);
+  }
 }

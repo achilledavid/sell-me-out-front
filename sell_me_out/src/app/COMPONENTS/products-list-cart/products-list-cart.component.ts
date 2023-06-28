@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { product } from 'src/app/CLASSES/product';
 import { CartService } from 'src/app/SERVICES/cart.service';
@@ -9,6 +9,7 @@ import { CartService } from 'src/app/SERVICES/cart.service';
   styleUrls: ['./products-list-cart.component.scss'],
 })
 export class ProductsListCartComponent {
+  @Input() enable_add_to_cart: boolean = false;
   items: product[] = [];
   items_subscription: Subscription;
 

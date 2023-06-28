@@ -1,5 +1,5 @@
 <div class="details" *ngIf="!loading">
-    <div class="details__image">
+    <div class="details__image" [class.details__image--disabled]="product.active == false">
         <img [src]="product.image" alt="picture of {{product.name}}">
     </div>
     <div class="details__content content">
@@ -25,7 +25,7 @@
         </div>
         <div class="buttons">
             <i class="fa fa-user" title="see the seller rates"></i>
-            <p>achille</p>
+            <p>{{product.seller_id}}</p>
             <rating-stars [rating]="product.seller_rate" [editable]="false"></rating-stars>
         </div>
     </div>

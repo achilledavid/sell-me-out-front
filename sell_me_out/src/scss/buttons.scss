@@ -59,6 +59,16 @@
     }
   }
 
+  &--grey {
+    background-color: var(--grey-light);
+    color: var(--color);
+
+    p,
+    i {
+      color: var(--color);
+    }
+  }
+
   &--round {
     border-radius: 100vmax;
   }

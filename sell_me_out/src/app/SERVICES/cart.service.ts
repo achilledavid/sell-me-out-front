@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Observable } from 'rxjs';
 import { product } from '../CLASSES/product';
+import { ModalService } from './modal.service';
 
 @Injectable({
   providedIn: 'root',
@@ -16,7 +17,7 @@ export class CartService {
   total_price: number = 0;
   total_price_subject: Subject<number> = new Subject<number>();
 
-  constructor() {
+  constructor(private modal: ModalService) {
     this.check_for_cart();
   }
 
@@ -36,6 +37,21 @@ export class CartService {
   }
 
   add_to_cart(product: product): void {
+    this.modal.confirm(
+      'add to cart',
+      'are you sure you want to add this product to your cart ?',
+      () => this.confirm_add_to_cart(product)
+    );
+  }
+
+  check_if_product_exists(product: product): boolean {
+    for (let item of this.items) {
+      if (item.id == product.id) return true;
+    }
+    return false;
+  }
+
+  confirm_add_to_cart(product: product): void {
     this.items.push(product);
     this.item_subject.next(this.items);
     this.update_total_price();
@@ -45,6 +61,14 @@ export class CartService {
   }
 
   remove_from_cart_by_key(key: number): void {
+    this.modal.delete(
+      'remove from cart',
+      'are you sure you want to remove this product from your cart ?',
+      () => this.confirm_remove_from_cart_by_key(key)
+    );
+  }
+
+  confirm_remove_from_cart_by_key(key: number): void {
     this.items.splice(key, 1);
     this.item_subject.next(this.items);
     this.update_total_price();

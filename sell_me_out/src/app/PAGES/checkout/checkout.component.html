@@ -3,7 +3,7 @@
         <h3>checkout</h3>
     </div>
     <div class="checkout">
-        <div products-list-card class="products"></div>
+        <div products-list-card class="products" [enable_add_to_cart]="true"></div>
         <h3 class="price" *ngIf="total_price != 0">Total : ${{total_price}}</h3>
         <div class="buttons" *ngIf="total_price != 0">
             <button class="button" (click)="back()">

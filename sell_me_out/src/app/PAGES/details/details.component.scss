@@ -8,6 +8,11 @@
     width: 100%;
     max-width: 50%;
 
+    &--disabled {
+      filter: grayscale(1);
+      opacity: 0.5;
+    }
+
     img {
       width: 100%;
       border-radius: 5px;

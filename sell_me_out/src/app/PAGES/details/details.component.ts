@@ -39,6 +39,7 @@ export class DetailsComponent {
         price: parseInt(product.prix),
         image: '/assets/img/' + product.image,
         rate: parseInt(product.averageRating),
+        seller_id: parseInt(product.userId),
         seller_rate: parseInt(product.sellerRating),
         active: product.visibility,
       };

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { product } from 'src/app/CLASSES/product';
 import { CartService } from 'src/app/SERVICES/cart.service';
 import { ModalService } from 'src/app/SERVICES/modal.service';
+import { ProductsService } from 'src/app/SERVICES/products.service';
 
 @Component({
   selector: 'product-mini',
@@ -16,16 +17,9 @@ export class ProductMiniComponent {
   constructor(
     private cart: CartService,
     private router: Router,
-    private modal: ModalService
+    private modal: ModalService,
+    private product_service: ProductsService
   ) {}
-
-  ask_confirmation(product: product) {
-    this.modal.confirm(
-      'add to cart',
-      'are you sure you want to add this product to your cart ?',
-      () => this.add_to_cart(product)
-    );
-  }
 
   add_to_cart(product: product) {
     this.cart.add_to_cart(product);
@@ -52,7 +46,8 @@ export class ProductMiniComponent {
   }
 
   publish() {
-    if (this.product.active == true) this.product.active = false;
-    else this.product.active = true;
+    this.product_service.togge_visibility(this.product.id).subscribe(() => {
+      this.product.active = !this.product.active;
+    });
   }
 }

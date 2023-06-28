@@ -11,18 +11,15 @@ import { ModalService } from 'src/app/SERVICES/modal.service';
 export class ProductCartComponent {
   @Input() product: product = {} as product;
   @Input() index: number = 0;
+  @Input() enable_add_to_cart: boolean = false;
 
   constructor(private cart: CartService, private modal: ModalService) {}
 
-  ask_confirmation() {
-    this.modal.delete(
-      'remove from cart',
-      'are you sure you want to remove this product from your cart ?',
-      () => this.remove_from_cart()
-    );
-  }
-
   remove_from_cart() {
     this.cart.remove_from_cart_by_key(this.index);
+  }
+
+  add_to_cart() {
+    this.cart.add_to_cart(this.product);
   }
 }
