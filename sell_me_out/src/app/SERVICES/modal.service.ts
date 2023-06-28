@@ -44,7 +44,7 @@ export class ModalService {
         cancelButtonText: 'cancel',
         buttonsStyling: false,
         customClass: {
-          confirmButton: 'button button--main',
+          confirmButton: 'button button--green',
           cancelButton: 'button',
         },
       })

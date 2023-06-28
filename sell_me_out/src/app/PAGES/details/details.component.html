@@ -3,11 +3,12 @@
         <img [src]="product.image" alt="picture of {{product.name}}">
     </div>
     <div class="details__content content">
-        <div class="content__title">
+        <div class="details__content__title content__title">
             <div class="buttons">
                 <h3>{{product.name}}</h3>
                 <rating-stars *ngIf="product.rate" [rating]="product.rate" [editable]="false"></rating-stars>
             </div>
+            <span *ngIf="product.active == false" class="badge badge--light badge--red">disabled</span>
             <p>{{product.desc}}</p>
         </div>
         <p class="details__content__price">${{product.price}}</p>
@@ -16,7 +17,8 @@
                 <i class="fa fa-arrow-left"></i>
                 <p>back</p>
             </button>
-            <button class="button button--main" (click)="add_to_cart()" title="add this product to your cart">
+            <button class="button button--main" [disabled]="product.active == false" (click)="add_to_cart()"
+                title="add this product to your cart">
                 <i class="fa fa-add"></i>
                 <p>add to cart</p>
             </button>

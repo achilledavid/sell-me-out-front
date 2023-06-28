@@ -2,7 +2,7 @@
     <div class="content__title">
         <div class="buttons">
             <h3>products</h3>
-            <div class="button button--main" title="create a new product" (click)="go_to_new_product()">
+            <div class="button button--main" title="create a new product" (click)="go_to_new_product()" *ngIf="seller">
                 <p>new product</p>
             </div>
         </div>

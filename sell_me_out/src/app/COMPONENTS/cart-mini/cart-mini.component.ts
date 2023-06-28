@@ -13,6 +13,7 @@ export class CartMiniComponent {
 
   constructor(private cart: CartService) {
     this.check_saved_cart();
+
     this.subscription = cart
       .get_number_of_items()
       .subscribe((value: number) => {

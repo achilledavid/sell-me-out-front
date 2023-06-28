@@ -30,6 +30,6 @@ export class NavComponent {
   }
 
   logout(): void {
-    this.connection.logout();
+    this.connection.ask_logout();
   }
 }

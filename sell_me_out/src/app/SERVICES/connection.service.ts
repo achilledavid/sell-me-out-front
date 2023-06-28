@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { BackService } from './back.service';
 import { CartService } from './cart.service';
 import { Observable } from 'rxjs';
+import { ModalService } from './modal.service';
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +14,8 @@ export class ConnectionService {
     private token: TokenService,
     private router: Router,
     private back: BackService,
-    private cart: CartService
+    private cart: CartService,
+    private modal: ModalService
   ) {}
 
   canActivate(): boolean {
@@ -27,6 +29,12 @@ export class ConnectionService {
 
   signup(data: FormData): Observable<any> {
     return this.back.post_data('signup', data);
+  }
+
+  ask_logout() {
+    this.modal.confirm('logout', 'are you sure you want to logout ?', () =>
+      this.logout()
+    );
   }
 
   logout() {

@@ -1,0 +1,21 @@
+.badge {
+  background-color: red;
+  width: fit-content;
+  padding: 4px 8px;
+  border-radius: 5px;
+  color: var(--color);
+  background-color: var(--background-hover);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+
+  &--red {
+    --color: var(--red);
+    --background-hover: var(--red-light);
+  }
+
+  &--light {
+    opacity: 0.9;
+  }
+}

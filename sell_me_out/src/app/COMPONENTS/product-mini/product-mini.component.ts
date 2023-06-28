@@ -12,7 +12,6 @@ import { ModalService } from 'src/app/SERVICES/modal.service';
 export class ProductMiniComponent {
   @Input() product: product = {} as product;
   @Input() mine: boolean = false;
-  published: boolean = false;
 
   constructor(
     private cart: CartService,
@@ -36,7 +35,23 @@ export class ProductMiniComponent {
     this.router.navigate(['products/details/' + id]);
   }
 
+  ask_publish() {
+    if (this.product.active) {
+      this.modal.delete(
+        'remove product',
+        'are you sure you want to remove this product ?',
+        () => this.publish()
+      );
+    } else {
+      this.modal.confirm(
+        'enable product',
+        'are you sure you want to enable this product ?',
+        () => this.publish()
+      );
+    }
+  }
+
   publish() {
-    this.published = !this.published;
+    this.product.active = !this.product.active;
   }
 }

@@ -34,6 +34,7 @@
               "src/scss/form.scss",
               "src/scss/inputs.scss",
               "src/scss/buttons.scss",
+              "src/scss/badge.scss",
               "src/scss/styles.scss",
               "src/scss/reset.css"
             ],

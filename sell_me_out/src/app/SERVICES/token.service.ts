@@ -43,6 +43,15 @@ export class TokenService {
     return '';
   }
 
+  getId(): number {
+    const user = localStorage.getItem('authToken');
+    if (user) {
+      const decoded = JSON.parse(user);
+      return decoded.id;
+    }
+    return 0;
+  }
+
   checkIfSeller(): boolean {
     return this.getRole() === 'seller';
   }

@@ -1,4 +1,4 @@
-<div class="product">
+<div class="product" [class.product--disabled]="product.active == false">
     <div class="product__image">
         <img [src]="product.image" alt="picture of {{product.name ? product.name : 'product name'}}">
         <span class="button product__details" (click)="go_to_details(product.id)" title="see the product details">
@@ -13,9 +13,11 @@
                 *ngIf="!mine">
                 <p>add to cart</p>
             </button>
-            <button class="button" [class.button--main]="!published" [class.button--red]="published"
-                [title]="published ? 'unpublish your cart' : 'publish your cart'" (click)="publish()" *ngIf="mine">
-                <p>{{published ? 'unpublish' : 'publish'}}</p>
+            <button class="button" [class.button--main]="product.active == false"
+                [class.button--red]="product.active == true"
+                [title]="product.active == true ? 'remove this product' : 'enable this product'" (click)="ask_publish()"
+                *ngIf="mine">
+                <p>{{product.active == true ? 'remove' : 'enable'}}</p>
             </button>
         </div>
     </div>

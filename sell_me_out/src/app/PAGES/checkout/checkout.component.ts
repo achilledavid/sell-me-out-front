@@ -26,4 +26,14 @@ export class CheckoutComponent {
       this.total_price = value;
     });
   }
+
+  back() {
+    window.history.back();
+  }
+
+  ask_checkout() {}
+
+  ngOnDestroy(): void {
+    this.total_price_subscription.unsubscribe();
+  }
 }
