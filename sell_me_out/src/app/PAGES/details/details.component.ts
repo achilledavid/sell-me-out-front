@@ -12,6 +12,7 @@ import { ProductsService } from 'src/app/SERVICES/products.service';
 export class DetailsComponent {
   product_id: number = 0;
   product: product = {} as product;
+  loading: boolean = true;
 
   constructor(
     private route: ActivatedRoute,
@@ -35,10 +36,11 @@ export class DetailsComponent {
         id: product.id,
         name: product.nom,
         desc: product.description,
-        price: JSON.parse(product.prix),
+        price: parseInt(product.prix),
         image: '/assets/img/' + product.image,
-        rate: JSON.parse(product.averageRating),
+        rate: parseInt(product.averageRating),
       };
+      this.loading = false;
     });
   }
 

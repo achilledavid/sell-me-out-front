@@ -1,4 +1,4 @@
-<div class="details">
+<div class="details" *ngIf="!loading">
     <div class="details__image">
         <img [src]="product.image" alt="picture of {{product.name}}">
     </div>
