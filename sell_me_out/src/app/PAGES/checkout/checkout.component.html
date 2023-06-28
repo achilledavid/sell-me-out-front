@@ -1,16 +1,18 @@
-<div class="content form">
+<div class="content">
     <div class="content__title">
         <h3>checkout</h3>
     </div>
-    <div products-list-card class="products"></div>
-    <p class="price" *ngIf="total_price != 0">Total : ${{total_price}}</p>
-    <div class="form__buttons" *ngIf="total_price != 0">
-        <button class="button">
-            <p>cancel</p>
-        </button>
-        <button class="button button--main">
-            <i class="fa fa-credit-card"></i>
-            <p>checkout</p>
-        </button>
+    <div class="checkout">
+        <div products-list-card class="products"></div>
+        <h3 class="price" *ngIf="total_price != 0">Total : ${{total_price}}</h3>
+        <div class="buttons" *ngIf="total_price != 0">
+            <button class="button">
+                <p>cancel</p>
+            </button>
+            <button class="button button--main">
+                <i class="fa fa-credit-card"></i>
+                <p>checkout</p>
+            </button>
+        </div>
     </div>
 </div>

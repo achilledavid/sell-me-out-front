@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { product_mini } from 'src/app/CLASSES/product_mini';
+import { product } from 'src/app/CLASSES/product';
 import { ProductsService } from 'src/app/SERVICES/products.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { ProductsService } from 'src/app/SERVICES/products.service';
   styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent {
-  products: product_mini[] = [];
+  products: product[] = [];
 
   constructor(private product: ProductsService, private router: Router) {
     this.get_products();
@@ -21,11 +21,11 @@ export class ProductsComponent {
         this.products.push({
           id: product.id,
           name: product.nom,
-          price: product.prix,
+          price: JSON.parse(product.prix),
           image: '/assets/img/' + product.image,
+          rate: 0,
         });
       });
-      console.log(this.products);
     });
   }
 

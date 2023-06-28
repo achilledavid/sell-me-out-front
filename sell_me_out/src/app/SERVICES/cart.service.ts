@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Observable } from 'rxjs';
-import { product_mini } from '../CLASSES/product_mini';
+import { product } from '../CLASSES/product';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CartService {
-  items: product_mini[] = [];
-  item_subject: Subject<product_mini[]> = new Subject<product_mini[]>();
+  items: product[] = [];
+  item_subject: Subject<product[]> = new Subject<product[]>();
   number_of_items: number = this.items.length;
   number_of_items_subject: Subject<number> = new Subject<number>();
   cart_visibility: boolean = false;
@@ -35,7 +35,7 @@ export class CartService {
     return this.number_of_items_subject.asObservable();
   }
 
-  add_to_cart(product: product_mini): void {
+  add_to_cart(product: product): void {
     this.items.push(product);
     this.item_subject.next(this.items);
     this.update_total_price();
@@ -53,7 +53,7 @@ export class CartService {
     localStorage.setItem('cart', JSON.stringify(this.items));
   }
 
-  get_items(): Observable<product_mini[]> {
+  get_items(): Observable<product[]> {
     return this.item_subject.asObservable();
   }
 

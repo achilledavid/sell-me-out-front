@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { product_mini } from 'src/app/CLASSES/product_mini';
+import { product } from 'src/app/CLASSES/product';
 import { CartService } from 'src/app/SERVICES/cart.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { CartService } from 'src/app/SERVICES/cart.service';
   styleUrls: ['./product-cart.component.scss'],
 })
 export class ProductCartComponent {
-  @Input() product: product_mini = {} as product_mini;
+  @Input() product: product = {} as product;
   @Input() index: number = 0;
 
   constructor(private cart: CartService) {}

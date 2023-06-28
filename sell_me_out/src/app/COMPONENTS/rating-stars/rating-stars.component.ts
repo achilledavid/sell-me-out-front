@@ -13,6 +13,10 @@ export class RatingStarsComponent {
 
   stars: boolean[] = [];
 
+  constructor() {
+    console.log(this.rating);
+  }
+
   ngOnInit(): void {
     this.stars = Array(5)
       .fill(false)

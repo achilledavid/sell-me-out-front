@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { product_mini } from 'src/app/CLASSES/product_mini';
+import { product } from 'src/app/CLASSES/product';
 import { CartService } from 'src/app/SERVICES/cart.service';
 
 @Component({
@@ -9,13 +9,13 @@ import { CartService } from 'src/app/SERVICES/cart.service';
   styleUrls: ['./product-mini.component.scss'],
 })
 export class ProductMiniComponent {
-  @Input() product: product_mini = {} as product_mini;
+  @Input() product: product = {} as product;
   @Input() mine: boolean = false;
   published: boolean = false;
 
   constructor(private cart: CartService, private router: Router) {}
 
-  add_to_cart(product: product_mini) {
+  add_to_cart(product: any) {
     this.cart.add_to_cart(product);
   }
 

@@ -1,18 +1,16 @@
 <div class="details">
     <div class="details__image">
-        <img src="/assets/img/shoe-1.png" alt="picture of New Balance 9060">
+        <img [src]="product.image" alt="picture of {{product.name}}">
     </div>
     <div class="details__content content">
         <div class="content__title">
             <div class="buttons">
-                <h3>New Balance 9060</h3>
-                <rating-stars [rating]="4" [editable]="false"></rating-stars>
+                <h3>{{product.name}}</h3>
+                <rating-stars [rating]="product.rate" [editable]="false"></rating-stars>
             </div>
-            <p>The New Balance 9060 Sea Salt features a gray premium mesh base. The entire structure is enhanced by
-                brushed beige suede inserts in the style of a 990. Its distinguishing feature is an imposing, chunky
-                ABZORB sole. White laces complete the avant-garde look.</p>
+            <p>{{product.desc}}</p>
         </div>
-        <p class="details__content__price">$150</p>
+        <p class="details__content__price">${{product.price}}</p>
         <div class="buttons">
             <button class="button" (click)="back()" title="go back">
                 <i class="fa fa-arrow-left"></i>
@@ -26,7 +24,7 @@
         <div class="buttons">
             <i class="fa fa-user" title="see the seller rates"></i>
             <p>achille</p>
-            <rating-stars [rating]="3" [editable]="false"></rating-stars>
+            <rating-stars [rating]="product.rate" [editable]="false"></rating-stars>
         </div>
     </div>
 </div>

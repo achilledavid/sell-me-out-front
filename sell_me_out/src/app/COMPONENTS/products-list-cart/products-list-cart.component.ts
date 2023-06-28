@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { product_mini } from 'src/app/CLASSES/product_mini';
+import { product } from 'src/app/CLASSES/product';
 import { CartService } from 'src/app/SERVICES/cart.service';
 
 @Component({
@@ -9,17 +9,15 @@ import { CartService } from 'src/app/SERVICES/cart.service';
   styleUrls: ['./products-list-cart.component.scss'],
 })
 export class ProductsListCartComponent {
-  items: product_mini[] = [];
+  items: product[] = [];
   items_subscription: Subscription;
 
   constructor(private cart: CartService) {
     this.check_saved_cart();
 
-    this.items_subscription = cart
-      .get_items()
-      .subscribe((value: product_mini[]) => {
-        this.items = value;
-      });
+    this.items_subscription = cart.get_items().subscribe((value: product[]) => {
+      this.items = value;
+    });
   }
 
   check_saved_cart(): void {

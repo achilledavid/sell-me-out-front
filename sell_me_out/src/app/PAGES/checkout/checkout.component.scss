@@ -6,8 +6,23 @@
   gap: 10px;
   overflow: auto;
   max-height: 700px;
+}
 
-  p {
-    margin-left: 10px;
+.checkout {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  .buttons {
+    width: 100%;
+
+    .button {
+      width: 100%;
+    }
+  }
+
+  h3 {
+    font-size: 1rem;
+    font-weight: 600;
   }
 }
