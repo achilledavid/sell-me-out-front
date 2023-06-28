@@ -23,6 +23,7 @@ build:
     paths:
       - sell_me_out/dist/
   script:
+    - cd sell_me_out
     - npm install
     - npm run build
 
