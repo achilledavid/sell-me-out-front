@@ -31,7 +31,7 @@ export class SignInComponent {
     data.append('mail', form.value.mail);
     data.append('password', form.value.password);
 
-    this.connection.login(data).subscribe(
+    this.connection.signin(data).subscribe(
       (res: any) => {
         this.token.setToken(JSON.stringify(res));
         this.router.navigate(['/products']);

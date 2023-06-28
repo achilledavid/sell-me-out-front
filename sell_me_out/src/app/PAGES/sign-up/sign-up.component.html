@@ -18,20 +18,23 @@
                 <i class="fa eye" [class.fa-eye]="password_visibility == 'text'" (click)="toggle_password_visibility()"
                     [class.fa-eye-slash]="password_visibility  == 'password'"></i>
             </div>
-            <p class="error">an error as occured, please try again</p>
         </div>
         <div class="form__item" [class.form__item--invalid]="wrong_informations">
             <label for="role">role</label>
-            <select name="role" id="role">
+            <select name="role" id="role" ngModel>
+                <option disabled selected>select a role</option>
                 <option value="seller">seller</option>
                 <option value="customer">customer</option>
+                <p class="success">user created successfully</p>
+                <p class="error">an error as occured, please try again</p>
             </select>
         </div>
         <div class="form__buttons">
             <span class="button" title="back to sign in" (click)="back()">
                 <p>back</p>
             </span>
-            <button class="button button--main" title="sign up to sell me out">
+            <button class="button button--main" title="sign up to sell me out" (click)="signup(form)"
+                [disabled]="form.invalid">
                 <p>sign up</p>
             </button>
         </div>

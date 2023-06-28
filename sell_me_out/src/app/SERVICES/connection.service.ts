@@ -21,8 +21,12 @@ export class ConnectionService {
     return this.token.isLoggedIn();
   }
 
-  login(data: FormData): Observable<any> {
+  signin(data: FormData): Observable<any> {
     return this.back.post_data('signin', data);
+  }
+
+  signup(data: FormData): Observable<any> {
+    return this.back.post_data('signup', data);
   }
 
   logout() {
