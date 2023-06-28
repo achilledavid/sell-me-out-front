@@ -44,6 +44,6 @@ export class TokenService {
   }
 
   checkIfSeller(): boolean {
-    return this.getRole() != 'seller';
+    return this.getRole() === 'seller';
   }
 }

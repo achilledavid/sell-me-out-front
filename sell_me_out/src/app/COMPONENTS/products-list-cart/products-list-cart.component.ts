@@ -5,10 +5,10 @@ import { CartService } from 'src/app/SERVICES/cart.service';
 
 @Component({
   selector: 'div[products-list-card]',
-  templateUrl: './products-list-card.component.html',
-  styleUrls: ['./products-list-card.component.scss'],
+  templateUrl: './products-list-cart.component.html',
+  styleUrls: ['./products-list-cart.component.scss'],
 })
-export class ProductsListCardComponent {
+export class ProductsListCartComponent {
   items: product_mini[] = [];
   items_subscription: Subscription;
 

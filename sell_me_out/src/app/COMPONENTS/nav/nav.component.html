@@ -4,5 +4,8 @@
         <navigation-item *ngFor="let item of items" [item]="item"></navigation-item>
         <shop-mini class="mini" *ngIf="seller"></shop-mini>
         <cart-mini class="mini"></cart-mini>
+        <button class="button mini" (click)="logout()" title="logout from sell me out">
+            <i class="fa fa-right-from-bracket"></i>
+        </button>
     </menu>
 </nav>

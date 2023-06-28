@@ -2,7 +2,7 @@
     <div class="content__title">
         <div class="buttons">
             <h3>products</h3>
-            <div class="button button--main" title="create a new product">
+            <div class="button button--main" title="create a new product" (click)="go_to_new_product()">
                 <p>new product</p>
             </div>
         </div>
@@ -13,7 +13,5 @@
             </button>
         </div>
     </div>
-    <div class="products">
-        <product-mini *ngFor="let product of products" [product]="product"></product-mini>
-    </div>
+    <products-list [products]="products"></products-list>
 </div>

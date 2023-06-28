@@ -17,6 +17,7 @@ nav {
   h2 {
     font-size: 1.1rem;
     font-weight: 700;
+    white-space: nowrap;
   }
 
   menu {
@@ -26,6 +27,11 @@ nav {
 
     .mini {
       margin-left: 5px;
+
+      &.button {
+        width: 25px;
+        height: 25px;
+      }
     }
   }
 }

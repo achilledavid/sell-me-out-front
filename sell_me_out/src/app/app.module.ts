@@ -20,7 +20,9 @@ import { ProductCartComponent } from './COMPONENTS/product-cart/product-cart.com
 import { HttpClientModule } from '@angular/common/http';
 import { ShopMiniComponent } from './COMPONENTS/shop-mini/shop-mini.component';
 import { ShopComponent } from './PAGES/shop/shop.component';
-import { ProductsListCardComponent } from './COMPONENTS/products-list-card/products-list-card.component';
+import { ProductsListCartComponent } from './COMPONENTS/products-list-cart/products-list-cart.component';
+import { ProductsListComponent } from './COMPONENTS/products-list/products-list.component';
+import { NewComponent } from './PAGES/new/new.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { ProductsListCardComponent } from './COMPONENTS/products-list-card/produ
     ProductCartComponent,
     ShopMiniComponent,
     ShopComponent,
-    ProductsListCardComponent,
+    ProductsListCartComponent,
+    ProductsListComponent,
+    NewComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

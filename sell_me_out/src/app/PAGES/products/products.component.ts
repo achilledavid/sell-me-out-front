@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { product_mini } from 'src/app/CLASSES/product_mini';
 
 @Component({
@@ -27,4 +28,10 @@ export class ProductsComponent {
       image: '/assets/img/shoe-3.png',
     },
   ];
+
+  constructor(private router: Router) {}
+
+  go_to_new_product() {
+    this.router.navigate(['/products/new']);
+  }
 }

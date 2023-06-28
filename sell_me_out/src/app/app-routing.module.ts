@@ -7,6 +7,8 @@ import { ProductsComponent } from './PAGES/products/products.component';
 import { OrdersComponent } from './PAGES/orders/orders.component';
 import { DetailsComponent } from './PAGES/details/details.component';
 import { ShopComponent } from './PAGES/shop/shop.component';
+import { CheckoutComponent } from './PAGES/checkout/checkout.component';
+import { NewComponent } from './PAGES/new/new.component';
 
 const routes: Routes = [
   {
@@ -28,6 +30,11 @@ const routes: Routes = [
     canActivate: [ConnectionService],
   },
   {
+    path: 'products/new',
+    component: NewComponent,
+    canActivate: [ConnectionService],
+  },
+  {
     path: 'products/details/:product_id',
     component: DetailsComponent,
     canActivate: [ConnectionService],
@@ -40,6 +47,11 @@ const routes: Routes = [
   {
     path: 'shop',
     component: ShopComponent,
+    canActivate: [ConnectionService],
+  },
+  {
+    path: 'checkout',
+    component: CheckoutComponent,
     canActivate: [ConnectionService],
   },
   {

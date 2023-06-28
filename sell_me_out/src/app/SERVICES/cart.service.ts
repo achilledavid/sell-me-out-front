@@ -62,6 +62,7 @@ export class CartService {
   }
 
   get_total_price(): Observable<number> {
+    this.update_total_price();
     return this.total_price_subject.asObservable();
   }
 
@@ -76,6 +77,11 @@ export class CartService {
 
   toggle_cart(): void {
     this.cart_visibility = !this.cart_visibility;
+    this.cart_visibility_subject.next(this.cart_visibility);
+  }
+
+  hide_cart(): void {
+    this.cart_visibility = false;
     this.cart_visibility_subject.next(this.cart_visibility);
   }
 

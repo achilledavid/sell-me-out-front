@@ -21,11 +21,26 @@ export class SignInComponent {
     if (this.token.isLoggedIn()) this.router.navigate(['/products']);
   }
 
+  reset_erros() {
+    this.wrong_informations = false;
+  }
+
   connect(form: NgForm) {
+    this.reset_erros();
     let data = new FormData();
     data.append('mail', form.value.mail);
     data.append('password', form.value.password);
-    this.connection.login(data);
+
+    this.connection.login(data).subscribe(
+      (res: any) => {
+        this.token.setToken(JSON.stringify(res));
+        this.router.navigate(['/products']);
+      },
+      (err: any) => {
+        console.log('Erreur lors de la connexion :', err);
+        this.wrong_informations = true;
+      }
+    );
   }
 
   signup() {

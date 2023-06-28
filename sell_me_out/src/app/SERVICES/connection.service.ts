@@ -3,6 +3,7 @@ import { TokenService } from './token.service';
 import { Router } from '@angular/router';
 import { BackService } from './back.service';
 import { CartService } from './cart.service';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -20,19 +21,8 @@ export class ConnectionService {
     return this.token.isLoggedIn();
   }
 
-  login(data: FormData) {
-    this.back.post_data('signin', data).subscribe(
-      (res: any) => {
-        console.log('yes');
-        this.token.setToken(JSON.stringify(res));
-        this.router.navigate(['/']);
-        return true;
-      },
-      (err: any) => {
-        console.log(err);
-        return false;
-      }
-    );
+  login(data: FormData): Observable<any> {
+    return this.back.post_data('signin', data);
   }
 
   logout() {

@@ -14,10 +14,12 @@ export class CartComponent {
   cart_visibility_subscription: Subscription;
   total_price: number = 0;
   total_price_subscription: Subscription;
-  items: product_mini[] = [];
-  items_subscription: Subscription;
 
   constructor(private cart: CartService, private router: Router) {
+    this.router.events.subscribe((val) => {
+      this.cart.hide_cart();
+    });
+
     this.check_total_price();
 
     this.cart_visibility_subscription = cart
@@ -31,18 +33,11 @@ export class CartComponent {
       .subscribe((value: number) => {
         this.total_price = value;
       });
-
-    this.items_subscription = cart
-      .get_items()
-      .subscribe((value: product_mini[]) => {
-        this.items = value;
-      });
   }
 
   check_total_price(): void {
-    this.total_price = 0;
-    this.items.forEach((item) => {
-      this.total_price += item.price;
+    this.cart.get_total_price().subscribe((value: number) => {
+      this.total_price = value;
     });
   }
 

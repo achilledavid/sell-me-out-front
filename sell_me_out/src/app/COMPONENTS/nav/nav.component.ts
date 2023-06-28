@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { nav_items } from 'src/app/CLASSES/nav_items';
+import { ConnectionService } from 'src/app/SERVICES/connection.service';
 import { TokenService } from 'src/app/SERVICES/token.service';
 @Component({
   selector: 'navigation',
@@ -19,9 +20,16 @@ export class NavComponent {
     },
   ];
 
-  constructor(private token: TokenService) {}
+  constructor(
+    private token: TokenService,
+    private connection: ConnectionService
+  ) {}
 
   check_if_seller(): boolean {
     return this.token.checkIfSeller();
+  }
+
+  logout(): void {
+    this.connection.logout();
   }
 }
