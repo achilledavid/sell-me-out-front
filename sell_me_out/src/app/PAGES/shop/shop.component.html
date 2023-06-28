@@ -10,4 +10,7 @@
             <p>my orders</p>
         </span>
     </div>
+    <div class="list">
+        <products-list *ngIf="on_product" [products]="products" [mine]="true"></products-list>
+    </div>
 </div>

@@ -10,6 +10,8 @@ import { CartService } from 'src/app/SERVICES/cart.service';
 })
 export class ProductMiniComponent {
   @Input() product: product_mini = {} as product_mini;
+  @Input() mine: boolean = false;
+  published: boolean = false;
 
   constructor(private cart: CartService, private router: Router) {}
 
@@ -19,5 +21,9 @@ export class ProductMiniComponent {
 
   go_to_details(id: number) {
     this.router.navigate(['products/details/' + id]);
+  }
+
+  publish() {
+    this.published = !this.published;
   }
 }

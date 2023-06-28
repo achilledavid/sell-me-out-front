@@ -8,6 +8,7 @@ import { product_mini } from 'src/app/CLASSES/product_mini';
 })
 export class ProductsListComponent {
   @Input() products: product_mini[] = [];
+  @Input() mine: boolean = false;
 
   constructor() {}
 }

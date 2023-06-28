@@ -9,8 +9,12 @@
         <h3>{{product.name ? product.name : 'product name'}}</h3>
         <div class="product__content__price">
             <span>${{product.price ? product.price : 'price'}}</span>
-            <button class="button button--main" title="add to your cart" (click)="add_to_cart(product)">
+            <button class="button button--main" title="add to your cart" (click)="add_to_cart(product)" *ngIf="!mine">
                 <p>add to cart</p>
+            </button>
+            <button class="button" [class.button--main]="!published" [class.button--red]="published"
+                [title]="published ? 'unpublish your cart' : 'publish your cart'" (click)="publish()" *ngIf="mine">
+                <p>{{published ? 'unpublish' : 'publish'}}</p>
             </button>
         </div>
     </div>
