@@ -36,7 +36,7 @@ export class ProductMiniComponent {
   }
 
   ask_publish() {
-    if (this.product.active) {
+    if (this.product.active == true) {
       this.modal.delete(
         'remove product',
         'are you sure you want to remove this product ?',
@@ -52,6 +52,7 @@ export class ProductMiniComponent {
   }
 
   publish() {
-    this.product.active = !this.product.active;
+    if (this.product.active == true) this.product.active = false;
+    else this.product.active = true;
   }
 }
