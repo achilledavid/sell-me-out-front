@@ -5,7 +5,7 @@
             <h3>{{product.name ? product.name : 'product name'}}</h3>
             <p>${{product.price ? product.price : 'price'}}</p>
         </div>
-        <button class="button button--red" title="remove from your cart" (click)="remove_from_cart()">
+        <button class="button button--red" title="remove from your cart" (click)="ask_confirmation()">
             <i class="fa fa-trash"></i>
         </button>
     </div>

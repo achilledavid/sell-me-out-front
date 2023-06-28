@@ -11,6 +11,8 @@
   border: none;
   outline: none;
   user-select: none;
+  font-size: 0.85rem;
+  font-weight: 500;
 
   &:hover {
     filter: brightness(0.95);
@@ -29,6 +31,7 @@
 
   &--main {
     background-color: var(--main);
+    color: var(--main-color);
 
     p,
     i {
@@ -38,6 +41,7 @@
 
   &--red {
     background-color: var(--red-light);
+    color: var(--red);
 
     p,
     i {
@@ -55,8 +59,15 @@
   }
 }
 
-.buttons {
+.buttons,
+.swal2-actions {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.swal2-actions {
+  .button {
+    min-width: 65px;
+  }
 }

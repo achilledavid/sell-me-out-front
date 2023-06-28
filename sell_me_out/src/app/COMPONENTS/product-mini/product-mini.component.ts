@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { product } from 'src/app/CLASSES/product';
 import { CartService } from 'src/app/SERVICES/cart.service';
+import { ModalService } from 'src/app/SERVICES/modal.service';
 
 @Component({
   selector: 'product-mini',
@@ -13,9 +14,21 @@ export class ProductMiniComponent {
   @Input() mine: boolean = false;
   published: boolean = false;
 
-  constructor(private cart: CartService, private router: Router) {}
+  constructor(
+    private cart: CartService,
+    private router: Router,
+    private modal: ModalService
+  ) {}
 
-  add_to_cart(product: any) {
+  ask_confirmation(product: product) {
+    this.modal.confirm(
+      'add to cart',
+      'are you sure you want to add this product to your cart ?',
+      () => this.add_to_cart(product)
+    );
+  }
+
+  add_to_cart(product: product) {
     this.cart.add_to_cart(product);
   }
 

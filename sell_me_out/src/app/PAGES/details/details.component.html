@@ -6,7 +6,7 @@
         <div class="content__title">
             <div class="buttons">
                 <h3>{{product.name}}</h3>
-                <rating-stars [rating]="product.rate" [editable]="false"></rating-stars>
+                <rating-stars *ngIf="product.rate" [rating]="product.rate" [editable]="false"></rating-stars>
             </div>
             <p>{{product.desc}}</p>
         </div>

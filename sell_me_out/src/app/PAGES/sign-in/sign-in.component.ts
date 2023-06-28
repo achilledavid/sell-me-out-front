@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { TokenService } from 'src/app/SERVICES/token.service';
 import { ConnectionService } from 'src/app/SERVICES/connection.service';
+import { ModalService } from 'src/app/SERVICES/modal.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -16,7 +17,8 @@ export class SignInComponent {
   constructor(
     private token: TokenService,
     private router: Router,
-    private connection: ConnectionService
+    private connection: ConnectionService,
+    private modal: ModalService
   ) {
     if (this.token.isLoggedIn()) this.router.navigate(['/products']);
   }
@@ -34,6 +36,7 @@ export class SignInComponent {
     this.connection.signin(data).subscribe(
       (res: any) => {
         this.token.setToken(JSON.stringify(res));
+        this.modal.success('Welcome !', 'You are successfully connected.');
         this.router.navigate(['/products']);
       },
       (err: any) => {

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { product } from 'src/app/CLASSES/product';
+import { ModalService } from 'src/app/SERVICES/modal.service';
 import { ProductsService } from 'src/app/SERVICES/products.service';
 
 @Component({
