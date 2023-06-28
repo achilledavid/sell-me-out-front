@@ -32,6 +32,7 @@ export class DetailsComponent {
 
   get_product() {
     this.product_service.get_product(this.product_id).subscribe((product) => {
+      console.log(product);
       this.product = {
         id: product.id,
         name: product.nom,
@@ -39,6 +40,7 @@ export class DetailsComponent {
         price: parseInt(product.prix),
         image: '/assets/img/' + product.image,
         rate: parseInt(product.averageRating),
+        seller_rate: parseInt(product.sellerRating),
       };
       this.loading = false;
     });

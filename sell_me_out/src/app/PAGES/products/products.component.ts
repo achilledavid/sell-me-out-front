@@ -24,6 +24,7 @@ export class ProductsComponent {
           price: JSON.parse(product.prix),
           image: '/assets/img/' + product.image,
           rate: 0,
+          seller_rate: 0,
         });
       });
     });

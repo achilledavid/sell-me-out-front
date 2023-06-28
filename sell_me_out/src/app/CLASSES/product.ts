@@ -5,6 +5,6 @@ export interface product {
   price: number;
   image: string;
   seller_id?: number;
-  seller_rate?: number;
+  seller_rate: number;
   rate: number;
 }
