@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
+import { product } from 'src/app/CLASSES/product';
 import { product_mini } from 'src/app/CLASSES/product_mini';
+import { ProductsService } from 'src/app/SERVICES/products.service';
 
 @Component({
   selector: 'products-list',
@@ -9,6 +11,4 @@ import { product_mini } from 'src/app/CLASSES/product_mini';
 export class ProductsListComponent {
   @Input() products: product_mini[] = [];
   @Input() mine: boolean = false;
-
-  constructor() {}
 }

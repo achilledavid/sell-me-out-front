@@ -23,6 +23,7 @@ import { ShopComponent } from './PAGES/shop/shop.component';
 import { ProductsListCartComponent } from './COMPONENTS/products-list-cart/products-list-cart.component';
 import { ProductsListComponent } from './COMPONENTS/products-list/products-list.component';
 import { NewComponent } from './PAGES/new/new.component';
+import { OrderMiniComponent } from './COMPONENTS/order-mini/order-mini.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { NewComponent } from './PAGES/new/new.component';
     ProductsListCartComponent,
     ProductsListComponent,
     NewComponent,
+    OrderMiniComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
