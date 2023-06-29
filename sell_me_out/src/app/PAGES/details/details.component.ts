@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { product } from 'src/app/CLASSES/product';
 import { CartService } from 'src/app/SERVICES/cart.service';
 import { ProductsService } from 'src/app/SERVICES/products.service';
+import { UserService } from 'src/app/SERVICES/user.service';
 
 @Component({
   selector: 'app-details',
@@ -13,11 +14,14 @@ export class DetailsComponent {
   product_id: number = 0;
   product: product = {} as product;
   loading: boolean = true;
+  seller: any = {};
+  seller_id: number = 0;
 
   constructor(
     private route: ActivatedRoute,
     private cart: CartService,
-    private product_service: ProductsService
+    private product_service: ProductsService,
+    private user: UserService
   ) {
     this.check_for_id();
   }
@@ -27,6 +31,19 @@ export class DetailsComponent {
     if (id) {
       this.product_id = parseInt(id);
       this.get_product();
+    }
+  }
+
+  get_seller(id: any) {
+    if (id) {
+      this.user.get_user_by_id(id).subscribe((seller) => {
+        this.seller = {
+          id: parseInt(seller.id),
+          name: seller.username,
+          email: seller.mail,
+          role: seller.role,
+        };
+      });
     }
   }
 
@@ -44,6 +61,7 @@ export class DetailsComponent {
         active: product.visibility,
       };
       this.loading = false;
+      this.get_seller(this.product.seller_id);
     });
   }
 

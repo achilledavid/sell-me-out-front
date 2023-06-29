@@ -4,11 +4,6 @@
     </div>
     <div class="order">
         <div products-list-order class="products"></div>
-        <h3 class="price" *ngIf="order.total_price != 0">Total : ${{order.total_price}}</h3>
-        <div class="buttons">
-            <i class="fa fa-user" title="see the seller rates"></i>
-            <p>{{order.seller_id}}</p>
-            <rating-stars [rating]="4" [editable]="false"></rating-stars>
-        </div>
+        <h3 class="price" *ngIf="order.total_price">Total : ${{order.total_price}}</h3>
     </div>
 </div>

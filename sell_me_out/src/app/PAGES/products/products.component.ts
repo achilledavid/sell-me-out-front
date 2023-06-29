@@ -10,14 +10,9 @@ import { TokenService } from 'src/app/SERVICES/token.service';
   styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent {
-  seller: boolean = this.check_if_seller();
   products: product[] = [];
 
-  constructor(
-    private product: ProductsService,
-    private router: Router,
-    private token: TokenService
-  ) {
+  constructor(private product: ProductsService, private token: TokenService) {
     this.get_products();
   }
 
@@ -39,9 +34,5 @@ export class ProductsComponent {
         });
       });
     });
-  }
-
-  go_to_new_product() {
-    this.router.navigate(['/products/new']);
   }
 }

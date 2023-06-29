@@ -23,9 +23,9 @@
                 <p>add to cart</p>
             </button>
         </div>
-        <div class="buttons">
+        <div class="buttons" *ngIf="product.seller_id != 25">
             <i class="fa fa-user" title="see the seller rates"></i>
-            <p>{{product.seller_id}}</p>
+            <p>{{seller.name}}</p>
             <rating-stars [rating]="product.seller_rate" [editable]="false"></rating-stars>
         </div>
     </div>

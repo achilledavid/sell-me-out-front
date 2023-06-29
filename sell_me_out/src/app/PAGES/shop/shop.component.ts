@@ -14,9 +14,22 @@ export class ShopComponent {
   on_product: boolean = true;
   products: product[] = [];
   orders: order[] = [];
+  seller: boolean = this.check_if_seller();
 
-  constructor(private product: ProductsService, private token: TokenService) {
+  constructor(
+    private product: ProductsService,
+    private token: TokenService,
+    private router: Router
+  ) {
     this.get_products();
+  }
+
+  check_if_seller(): boolean {
+    return this.token.checkIfSeller();
+  }
+
+  go_to_new_product(): void {
+    this.router.navigateByUrl('/products/new');
   }
 
   get_products() {
