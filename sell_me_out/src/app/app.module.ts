@@ -21,9 +21,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { ShopMiniComponent } from './COMPONENTS/shop-mini/shop-mini.component';
 import { ShopComponent } from './PAGES/shop/shop.component';
 import { ProductsListCartComponent } from './COMPONENTS/products-list-cart/products-list-cart.component';
+import { ProductsListOrderComponent } from './COMPONENTS/products-list-order/products-list-order.component';
 import { ProductsListComponent } from './COMPONENTS/products-list/products-list.component';
 import { NewComponent } from './PAGES/new/new.component';
 import { OrderMiniComponent } from './COMPONENTS/order-mini/order-mini.component';
+import { OrdersListComponent } from './COMPONENTS/orders-list/orders-list.component';
+import { OrderDetailsComponent } from './PAGES/order-details/order-details.component';
 
 @NgModule({
   declarations: [
@@ -44,9 +47,12 @@ import { OrderMiniComponent } from './COMPONENTS/order-mini/order-mini.component
     ShopMiniComponent,
     ShopComponent,
     ProductsListCartComponent,
+    ProductsListOrderComponent,
     ProductsListComponent,
     NewComponent,
     OrderMiniComponent,
+    OrdersListComponent,
+    OrderDetailsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

@@ -1,3 +1,4 @@
+import { order } from 'src/app/CLASSES/order';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { product } from 'src/app/CLASSES/product';
@@ -12,6 +13,7 @@ import { TokenService } from 'src/app/SERVICES/token.service';
 export class ShopComponent {
   on_product: boolean = true;
   products: product[] = [];
+  orders: order[] = [];
 
   constructor(private product: ProductsService, private token: TokenService) {
     this.get_products();
@@ -26,7 +28,7 @@ export class ShopComponent {
           name: product.nom,
           price: JSON.parse(product.prix),
           image: '/assets/img/' + product.image,
-          rate: 0,
+          rate: parseInt(product.averageRating),
           seller_rate: 0,
           active: product.visibility,
         });

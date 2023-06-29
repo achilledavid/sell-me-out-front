@@ -1,3 +1,4 @@
 <p *ngIf="items.length <= 0">your cart is empty</p>
-<product-cart *ngFor="let product of items; let index= index" [product]="product" [index]="index"
-    [enable_add_to_cart]="enable_add_to_cart"></product-cart>
+<product-cart *ngFor="let product of items; let index = index" [product]="product" [index]="index"
+    [enable_add_to_cart]="enable_add_to_cart" [enable_remove_from_cart]="enable_remove_from_cart"
+    [enable_stars]="enable_stars"></product-cart>

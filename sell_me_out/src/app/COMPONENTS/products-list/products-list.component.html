@@ -1,4 +1,15 @@
+<div class="search">
+    <div class="buttons">
+        <input type="text" placeholder="type here..." [(ngModel)]="search">
+        <button class="button" (click)="search_by_name()" title="apply search">
+            <i class="fa fa-magnifying-glass"></i>
+        </button>
+        <button class="button" (click)="clear_search()" title="clear search">
+            <i class="fa fa-xmark"></i>
+        </button>
+    </div>
+</div>
 <div class="products" *ngIf="products.length > 0">
     <product-mini *ngFor="let product of products" [mine]="mine" [product]="product"></product-mini>
 </div>
-<p *ngIf="products.length <= 0">there is no product</p>
+<p *ngIf="products.length <= 0 && !loading">there is no product</p>

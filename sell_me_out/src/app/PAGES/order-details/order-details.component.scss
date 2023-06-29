@@ -1,0 +1,28 @@
+.products {
+  flex: 1;
+  background-color: var(--background);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: auto;
+  max-height: 700px;
+}
+
+.order {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  .buttons {
+    width: 100%;
+
+    .button {
+      width: 100%;
+    }
+  }
+
+  h3 {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+}

@@ -47,7 +47,8 @@ export class ProductMiniComponent {
 
   publish() {
     this.product_service.togge_visibility(this.product.id).subscribe(() => {
-      this.product.active = !this.product.active;
+      if (this.product.active == true) this.product.active = false;
+      else this.product.active = true;
     });
   }
 }

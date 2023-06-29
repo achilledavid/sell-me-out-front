@@ -21,12 +21,12 @@
 
   i,
   p {
-    line-height: 0;
     color: var(--main-color);
   }
 
   p {
     min-width: 12px;
+    white-space: nowrap;
     text-align: end;
   }
 }

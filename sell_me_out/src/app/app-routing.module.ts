@@ -9,6 +9,7 @@ import { DetailsComponent } from './PAGES/details/details.component';
 import { ShopComponent } from './PAGES/shop/shop.component';
 import { CheckoutComponent } from './PAGES/checkout/checkout.component';
 import { NewComponent } from './PAGES/new/new.component';
+import { OrderDetailsComponent } from './PAGES/order-details/order-details.component';
 
 const routes: Routes = [
   {
@@ -42,6 +43,11 @@ const routes: Routes = [
   {
     path: 'orders',
     component: OrdersComponent,
+    canActivate: [ConnectionService],
+  },
+  {
+    path: 'orders/details/:order_id',
+    component: OrderDetailsComponent,
     canActivate: [ConnectionService],
   },
   {

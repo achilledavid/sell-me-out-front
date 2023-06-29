@@ -33,7 +33,7 @@ export class ProductsComponent {
           name: product.nom,
           price: JSON.parse(product.prix),
           image: '/assets/img/' + product.image,
-          rate: 0,
+          rate: parseInt(product.averageRating),
           seller_rate: 0,
           active: product.visibility,
         });

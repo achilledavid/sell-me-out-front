@@ -3,7 +3,7 @@
         <h2>cart</h2>
         <i class="fas fa-times" (click)="toggle_cart()"></i>
     </div>
-    <div products-list-card class="cart__content" [enable_add_to_cart]="false"></div>
+    <div products-list-cart class="cart__content" [enable_add_to_cart]="false" [enable_remove_from_cart]="true"></div>
     <div class="cart__footer">
         <h3>${{total_price}}</h3>
         <button class="button button--main" (click)="checkout()" title="proceed to the checkout">

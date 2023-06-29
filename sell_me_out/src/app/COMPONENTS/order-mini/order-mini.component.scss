@@ -1,0 +1,49 @@
+.order {
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 10px;
+  background-color: var(--background);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: space-between;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .fa-box-open {
+      font-size: 1.3rem;
+      color: #d4a373;
+      margin-top: 3px;
+    }
+
+    &__title {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+
+      h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        white-space: nowrap;
+      }
+
+      p {
+        font-size: 0.65rem;
+        color: var(--grey);
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .button {
+    p {
+      font-size: 0.7rem;
+      white-space: nowrap;
+    }
+  }
+}

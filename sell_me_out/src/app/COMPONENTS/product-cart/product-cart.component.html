@@ -5,10 +5,13 @@
             <h3>{{product.name ? product.name : 'product name'}}</h3>
             <p>${{product.price ? product.price : 'price'}}</p>
         </div>
+        <rating-stars class="stars" *ngIf="enable_stars" [editable]="true" [rating]="product.rate"
+            (ratingChange)="change_rate($event)"></rating-stars>
         <button *ngIf="enable_add_to_cart" class="button button--grey" title="add to cart" (click)="add_to_cart()">
             <i class="fa fa-plus"></i>
         </button>
-        <button class="button button--red" title="remove from your cart" (click)="remove_from_cart()">
+        <button *ngIf="enable_remove_from_cart" class="button button--red" title="remove from your cart"
+            (click)="remove_from_cart()">
             <i class="fa fa-trash"></i>
         </button>
     </div>

@@ -4,12 +4,15 @@ import { product } from 'src/app/CLASSES/product';
 import { CartService } from 'src/app/SERVICES/cart.service';
 
 @Component({
-  selector: 'div[products-list-card]',
+  selector: 'div[products-list-cart]',
   templateUrl: './products-list-cart.component.html',
   styleUrls: ['./products-list-cart.component.scss'],
 })
 export class ProductsListCartComponent {
   @Input() enable_add_to_cart: boolean = false;
+  @Input() enable_remove_from_cart: boolean = false;
+  @Input() enable_stars: boolean = false;
+  @Input() products: product[] = [];
   items: product[] = [];
   items_subscription: Subscription;
 

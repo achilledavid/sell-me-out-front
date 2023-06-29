@@ -1,6 +1,8 @@
+import { order } from 'src/app/CLASSES/order';
 import { Component } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { CartService } from 'src/app/SERVICES/cart.service';
+import { OrdersService } from 'src/app/SERVICES/orders.service';
 
 @Component({
   selector: 'app-checkout',
@@ -11,7 +13,7 @@ export class CheckoutComponent {
   total_price: number = 0;
   total_price_subscription: Subscription;
 
-  constructor(private cart: CartService) {
+  constructor(private cart: CartService, private orders: OrdersService) {
     this.check_total_price();
 
     this.total_price_subscription = cart
@@ -31,7 +33,10 @@ export class CheckoutComponent {
     window.history.back();
   }
 
-  ask_checkout() {}
+  checkout() {
+    const order: order = {} as order;
+    this.orders.create_order(order);
+  }
 
   ngOnDestroy(): void {
     this.total_price_subscription.unsubscribe();

@@ -1,1 +1,12 @@
-<p>order-mini works!</p>
+<div class="order">
+    <div class="order__content">
+        <i class="fa fa-box-open"></i>
+        <div class="order__content__title">
+            <h3>order #{{order.id}}</h3>
+            <p>{{order.date | date:'hh:mm, dd MMM. yyyy'}}</p>
+        </div>
+    </div>
+    <button class="button button--main" title="see the order details" (click)="go_to_order_details()">
+        <p>see details</p>
+    </button>
+</div>

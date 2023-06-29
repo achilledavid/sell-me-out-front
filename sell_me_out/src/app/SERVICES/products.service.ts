@@ -21,6 +21,14 @@ export class ProductsService {
   }
 
   togge_visibility(id: number): Observable<any> {
-    return this.back.post_without_data(`product/visibility/${id}`);
+    return this.back.put_without_data(`product/visibility/${id}`);
+  }
+
+  search_by_name(name: string): Observable<any> {
+    return this.back.get(`products/search/${name}`);
+  }
+
+  search_by_name_with_seller(name: string, id: number): Observable<any> {
+    return this.back.get(`products/${id}/search/${name}`);
   }
 }
