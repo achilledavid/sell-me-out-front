@@ -7,7 +7,6 @@ import { product } from 'src/app/CLASSES/product';
   styleUrls: ['./products-list-order.component.scss'],
 })
 export class ProductsListOrderComponent {
-  @Input() products: product[] = [];
-
+  @Input() products?: product[] = [];
   constructor() {}
 }

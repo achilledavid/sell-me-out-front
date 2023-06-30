@@ -1,3 +1,4 @@
 <div class="orders">
     <order-mini *ngFor="let order of orders" [order]="order"></order-mini>
 </div>
+<p *ngIf="orders.length <= 0">there is no orders</p>

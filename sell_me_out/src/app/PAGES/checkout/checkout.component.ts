@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { CartService } from 'src/app/SERVICES/cart.service';
 import { OrdersService } from 'src/app/SERVICES/orders.service';
+import { product } from 'src/app/CLASSES/product';
+import { TokenService } from 'src/app/SERVICES/token.service';
 
 @Component({
   selector: 'app-checkout',
@@ -12,8 +14,13 @@ import { OrdersService } from 'src/app/SERVICES/orders.service';
 export class CheckoutComponent {
   total_price: number = 0;
   total_price_subscription: Subscription;
+  saved_cart: any;
 
-  constructor(private cart: CartService, private orders: OrdersService) {
+  constructor(
+    private cart: CartService,
+    private orders: OrdersService,
+    private token: TokenService
+  ) {
     this.check_total_price();
 
     this.total_price_subscription = cart
@@ -34,8 +41,10 @@ export class CheckoutComponent {
   }
 
   checkout() {
-    const order: order = {} as order;
-    this.orders.create_order(order);
+    const id = this.token.getId();
+    const cart = this.cart.get_cart();
+    this.saved_cart = cart.map((item) => item.id);
+    this.orders.create_order(this.saved_cart, id);
   }
 
   ngOnDestroy(): void {

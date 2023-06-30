@@ -3,7 +3,7 @@
         <i class="fa fa-box-open"></i>
         <div class="order__content__title">
             <h3>order #{{order.id}}</h3>
-            <p>{{order.date | date:'hh:mm, dd MMM. yyyy'}}</p>
+            <p>{{order.date | date:'dd MMM. yyyy'}}</p>
         </div>
     </div>
     <button class="button button--main" title="see the order details" (click)="go_to_order_details()">

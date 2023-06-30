@@ -60,6 +60,10 @@ export class CartService {
     localStorage.setItem('cart', JSON.stringify(this.items));
   }
 
+  get_cart(): product[] {
+    return this.items;
+  }
+
   remove_from_cart_by_key(key: number): void {
     this.modal.delete(
       'remove from cart',

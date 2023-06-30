@@ -2,7 +2,8 @@
     <img [src]="product.image" alt="picture of {{product.name}}">
     <div class="product__content">
         <div class="product__content__text">
-            <h3>{{product.name ? product.name : 'product name'}}</h3>
+            <h3>{{product.name ? product.name : 'product name'}} <span *ngIf="product.quantity">x
+                    {{product.quantity}}</span></h3>
             <p>${{product.price ? product.price : 'price'}}</p>
         </div>
         <rating-stars class="stars" *ngIf="enable_stars" [editable]="true" [rating]="product.rate"

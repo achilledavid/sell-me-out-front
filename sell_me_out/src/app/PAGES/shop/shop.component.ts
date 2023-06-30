@@ -1,9 +1,11 @@
+import { user } from './../../CLASSES/user';
 import { order } from 'src/app/CLASSES/order';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { product } from 'src/app/CLASSES/product';
 import { ProductsService } from 'src/app/SERVICES/products.service';
 import { TokenService } from 'src/app/SERVICES/token.service';
+import { OrdersService } from 'src/app/SERVICES/orders.service';
 
 @Component({
   selector: 'app-shop',
@@ -19,7 +21,8 @@ export class ShopComponent {
   constructor(
     private product: ProductsService,
     private token: TokenService,
-    private router: Router
+    private router: Router,
+    private orders_service: OrdersService
   ) {
     this.get_products();
   }
@@ -55,5 +58,38 @@ export class ShopComponent {
 
   go_to_orders(): void {
     this.on_product = false;
+    this.get_seller_orders();
+  }
+
+  get_seller_orders() {
+    const id = this.token.getId();
+    this.orders_service.get_orders_by_seller(id).subscribe((orders) => {
+      orders.forEach((order: any) => {
+        if (Array.isArray(order.produits)) {
+          const products: product[] = order.produits.map((product: any) => {
+            return {
+              id: product.id,
+              name: product.nom,
+              desc: product.description,
+              price: parseFloat(product.prix),
+              image: product.image,
+              seller_id: product.userId,
+              seller_rate: 0,
+              rate: parseInt(product.note),
+              active: product.visibility === '1',
+              quantity: parseInt(product.quantity),
+            };
+          });
+
+          this.orders.push({
+            id: order.idCommande,
+            user_id: parseInt(order.idUtilisateur),
+            total_price: order.prixTotalCommande,
+            date: order.dateCommande,
+            products: products,
+          });
+        }
+      });
+    });
   }
 }

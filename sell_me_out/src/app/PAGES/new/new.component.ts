@@ -21,8 +21,6 @@ export class NewComponent {
       price: form.value.price,
       active: form.value.active,
     };
-    this.product.create_product(product).subscribe((res) => {
-      console.log(res);
-    });
+    this.product.create_product(product).subscribe((res) => {});
   }
 }

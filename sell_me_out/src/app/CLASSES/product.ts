@@ -8,4 +8,5 @@ export interface product {
   seller_rate: number;
   rate: number;
   active: boolean;
+  quantity?: number;
 }

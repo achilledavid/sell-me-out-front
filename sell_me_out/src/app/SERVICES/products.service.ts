@@ -1,3 +1,4 @@
+import { product } from 'src/app/CLASSES/product';
 import { Injectable } from '@angular/core';
 import { BackService } from './back.service';
 import { Observable } from 'rxjs';
@@ -42,5 +43,11 @@ export class ProductsService {
 
   search_by_name_with_seller(name: string, id: number): Observable<any> {
     return this.back.get(`products/${id}/search/${name}`);
+  }
+
+  change_stars(user_id: string, product_id: string, rate: number) {
+    const formData = new FormData();
+    formData.append('userId', user_id.toString());
+    return this.back.post_data(`product/${product_id}/stars/${rate}`, formData);
   }
 }

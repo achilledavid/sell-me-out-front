@@ -12,9 +12,10 @@
     </div>
     <div class="list">
         <products-list *ngIf="on_product" [products]="products" [mine]="true"></products-list>
-        <div class="button button--main new" title="create a new product" (click)="go_to_new_product()" *ngIf="seller">
+        <div class="button button--main new" title="create a new product" (click)="go_to_new_product()"
+            *ngIf="seller && on_product">
             <p>create product</p>
         </div>
-        <orders-list class="orders" *ngIf="!on_product"></orders-list>
+        <orders-list class="orders" *ngIf="!on_product" [orders]="orders"></orders-list>
     </div>
 </div>
