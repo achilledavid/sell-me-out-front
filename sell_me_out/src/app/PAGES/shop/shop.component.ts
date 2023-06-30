@@ -68,28 +68,29 @@ export class ShopComponent {
         if (Array.isArray(order.produits)) {
           const products: product[] = order.produits.map((product: any) => {
             return {
-              id: product.id,
-              name: product.nom,
-              desc: product.description,
-              price: parseFloat(product.prix),
-              image: product.image,
-              seller_id: product.userId,
+              id: product.product.id,
+              name: product.product.nom,
+              desc: product.product.description,
+              price: parseFloat(product.product.prix),
+              image: product.product.image,
+              seller_id: product.product.userId,
               seller_rate: 0,
-              rate: parseInt(product.note),
-              active: product.visibility === '1',
+              rate: parseInt(product.product.averageRating),
+              active: product.product.visibility === '1',
               quantity: parseInt(product.quantity),
             };
           });
 
           this.orders.push({
-            id: order.idCommande,
-            user_id: parseInt(order.idUtilisateur),
+            id: order.orderId,
+            user_id: parseInt(order.userId),
             total_price: order.prixTotalCommande,
-            date: order.dateCommande,
+            date: order.date,
             products: products,
           });
         }
       });
+      console.log(this.orders);
     });
   }
 }

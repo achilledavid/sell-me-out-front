@@ -2,12 +2,19 @@ import { Injectable } from '@angular/core';
 import { BackService } from './back.service';
 import { Observable } from 'rxjs';
 import { ModalService } from './modal.service';
+import { CartService } from './cart.service';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class OrdersService {
-  constructor(private back: BackService, private modal: ModalService) {}
+  constructor(
+    private back: BackService,
+    private modal: ModalService,
+    private cart: CartService,
+    private router: Router
+  ) {}
 
   get_orders_by_customer(id: number): Observable<any> {
     return this.back.get('orders/' + id);
@@ -27,16 +34,23 @@ export class OrdersService {
 
   create_order(order: any, user_id: number): void {
     this.modal.confirm(
-      'create order',
-      'are you sure you want to create this order?',
+      'send order',
+      'are you sure you want to send this order?',
       () => this.create_order_confirm(order, user_id).subscribe()
     );
   }
 
   create_order_confirm(order: any, user_id: number): Observable<any> {
+    this.modal.success('order sent', 'your order has been sent');
+    this.clear_cart();
+    this.router.navigate(['/orders']);
     const formData = new FormData();
     formData.append('products', JSON.stringify(order));
     formData.append('userId', user_id.toString());
     return this.back.post_data('order', formData);
+  }
+
+  clear_cart(): void {
+    this.cart.delete_cart();
   }
 }
