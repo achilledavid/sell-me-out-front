@@ -3,12 +3,17 @@ import { Injectable } from '@angular/core';
 import { BackService } from './back.service';
 import { Observable } from 'rxjs';
 import { TokenService } from './token.service';
+import { ModalService } from './modal.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductsService {
-  constructor(private back: BackService, private token: TokenService) {}
+  constructor(
+    private back: BackService,
+    private token: TokenService,
+    private modal: ModalService
+  ) {}
 
   get_products(): Observable<any> {
     return this.back.get('products');
